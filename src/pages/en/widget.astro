@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const code = (name: string, t: string, h: number) => `<iframe src="${SITE_URL}/embed/${lang}/${name}/" title="${t}" width="100%" height="${h}" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+const items = [
+  { name: 'pflicht-check', h2: 'Mandate check', text: 'Three answers, and your readers see when they must issue e-invoices and what already applies.', t: 'Check the German e-invoicing mandate', h: 760 },
+  { name: 'leitweg-id', h2: 'Leitweg-ID checker', text: 'Checks the structure, area and check digits of a Leitweg-ID before an invoice goes to a public body.', t: 'Check a Leitweg-ID', h: 520 },
+  { name: 'e-rechnung-viewer', h2: 'E-invoice viewer', text: 'Opens XRechnung and ZUGFeRD files as a readable invoice. The file stays on your readers’ device.', t: 'Open an e-invoice', h: 1200 },
+];
+---
+<PageLayout title="Embed the e-invoicing tools for free: check, Leitweg-ID, viewer" description="Embed the mandate check, the Leitweg-ID checker and the XRechnung and ZUGFeRD viewer for free with an iframe: copy the code, new versions arrive by themselves." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Widget', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Widget' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Embed the e-invoicing tools</h1>
+    <p class="mt-3 text-lg text-navy-700">For chambers, associations, accounting firms and clubs: copy once, and new deadlines and format versions appear by themselves.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    {items.map((i) => (<>
+      <h2>{i.h2}</h2>
+      <p>{i.text}</p>
+      <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code(i.name, i.t, i.h)}</code></pre>
+    </>))}
+    <p>For the German version, replace <code>/embed/en/</code> with <code>/embed/de/</code>. Terms: the source link under the tool stays visible, the tool is not altered and is provided without warranty. What your readers enter or open stays on their device. Questions via the <a href={route('contact', lang)}>contact page</a>.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src={`/embed/${lang}/pflicht-check/`} title="Check the German e-invoicing mandate" width="100%" height="760" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

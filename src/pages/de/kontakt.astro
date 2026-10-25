@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'de';
+const description = 'Schreiben Sie uns, wenn eine Regel oder Frist nicht stimmt, der Viewer eine Rechnungsdatei falsch liest oder Sie ein Werkzeug auf Ihrer Seite einbinden möchten.';
+---
+<PageLayout title={`Kontakt zu ${SITE_NAMES[lang]}: Fehler melden, Werkzeug einbinden`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Kontakt', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Kontakt' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Kontakt</h1>
+    <p>E-Mail: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Antwort meist innerhalb einer Woche.</p>
+    <h2>Eine Regel oder Frist scheint falsch</h2>
+    <p>Nennen Sie die Seite, die Angabe und, wenn möglich, die Fundstelle im Gesetz oder im BMF-Schreiben. Wir prüfen an der Quelle und korrigieren innerhalb weniger Tage.</p>
+    <h2>Der Viewer liest eine Datei falsch</h2>
+    <p>Beschreiben Sie, welches Feld falsch angezeigt wird, und nennen Sie das Format (XRechnung UBL oder CII, ZUGFeRD mit Profil). Schicken Sie uns bitte keine echte Rechnung mit Namen, Anschriften oder Bankdaten. Ersetzen Sie diese Angaben vorher durch Fantasiewerte; die Struktur der Datei genügt uns, um den Fehler zu finden.</p>
+    <h2>Werkzeug einbinden</h2>
+    <p>Kammern, Verbände, Kanzleien und Vereine können den Pflicht-Check, den Leitweg-ID-Prüfer und den Viewer kostenlos einbinden: <a href={route('widget', lang)}>Einbinden</a>.</p>
+    <h2>Was wir nicht leisten</h2>
+    <p>Keine Steuerberatung im Einzelfall, keine Prüfung Ihrer Buchhaltung, kein Versand von Rechnungen und keine Einrichtung von Software. Dafür sind Steuerberater und Anbieter von Buchhaltungsprogrammen da.</p>
+  </div>
+</PageLayout>

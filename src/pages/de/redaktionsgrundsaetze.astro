@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'de';
+---
+<PageLayout title={`Redaktionsgrundsätze von ${SITE_NAMES[lang]}: Quellen und Prüfung`} description="Woher Fristen, Regeln und Formatangaben kommen, in welcher Rangfolge wir Quellen lesen, wie wir Werkzeuge prüfen, wann wir aktualisieren und was bei einem Fehler geschieht." lang={lang} noindex={true} breadcrumbs={[{ label: 'Redaktionsgrundsätze' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Redaktionsgrundsätze und Korrekturen</h1>
+    <p>Wer nach einer falschen Frist plant oder eine fehlerhafte Rechnung verschickt, verliert Zeit und riskiert den Vorsteuerabzug seines Kunden. Deshalb steht hier, woher alles kommt und was passiert, wenn etwas nicht stimmt.</p>
+    <h2>Verantwortung</h2><p>Inhalte und Werkzeuge verantwortet {AUTHOR_NAME}. Kontakt: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Rangfolge der Quellen</h2>
+    <ol>
+      <li><strong>Gesetze und Verordnungen</strong> in der geltenden Fassung auf gesetze-im-internet.de: Umsatzsteuergesetz, Umsatzsteuer-Durchführungsverordnung, Abgabenordnung, E-Rechnungsverordnung des Bundes;</li>
+      <li><strong>Verwaltungsanweisungen</strong>: Schreiben des Bundesfinanzministeriums, insbesondere zur E-Rechnung und zu den GoBD, und seine FAQ;</li>
+      <li><strong>Technische Spezifikationen</strong>: Norm EN 16931, XRechnung und Leitweg-ID der KoSIT, ZUGFeRD von FeRD, dazu die Hinweise der Rechnungseingangsplattformen des Bundes.</li>
+    </ol>
+    <p>Fachartikel, Foren und Angebote von Softwareherstellern sind keine Quelle für eine Regel. Widersprechen sich zwei Quellen, gilt die höhere, und wir sagen es.</p>
+    <h2>Jede Zahl mit Datum</h2><p>Jeder Stichtag, jede Grenze und jede Formatversion steht mit Quelle und Lesedatum in einer Parameterdatei. Die Seiten lesen ihre Zahlen aus dieser Datei, nie aus dem Text. Was nur angekündigt oder im Entwurf ist, heißt hier „noch nicht veröffentlicht“ und fließt erst in die Werkzeuge ein, wenn es verkündet ist.</p>
+    <h2>Prüfung der Werkzeuge</h2><p>Erzeugte Dateien werden mit dem amtlichen Validator der KoSIT und mit veraPDF geprüft, der Leser mit den Testdateien der KoSIT. Automatische Tests laufen bei jeder Änderung.</p>
+    <h2>Rhythmus</h2><p>Die Quellen werden regelmäßig neu gelesen. Vollständige Durchsicht mindestens alle {REVIEW_CYCLE_MONTHS} Monate und nach jeder Änderung des Umsatzsteuergesetzes, einem neuen BMF-Schreiben oder einer neuen Fassung von XRechnung oder ZUGFeRD.</p>
+    <h2>Umgang mit Fehlern</h2>
+    <ol><li>Prüfung an der Quelle.</li><li>Korrektur in der Parameterdatei oder im Regelwerk und ein neuer Test.</li><li>Neues Datum auf allen Seiten.</li></ol>
+    <h2>Unabhängigkeit</h2><p>Kein Geld von Softwareherstellern, Kanzleien oder Behörden. Keine Affiliate-Links, keine bezahlten Beiträge, keine Produktempfehlung, kein Formular zur Kundengewinnung.</p>
+    <p>Siehe auch <a href={route('method', lang)}>Methode</a>. Fassung: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

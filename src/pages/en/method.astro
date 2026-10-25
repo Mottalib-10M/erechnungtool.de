@@ -1,0 +1,57 @@
+---
+/** Method: rules, pre-check, creator, evidence, limits. Every figure from params-2026.json. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate, formatMoney } from '../../lib/format';
+const lang = 'en';
+const path = route('method', lang);
+const P = K.P, PF = P.pflicht, S = P.standards;
+const title = 'E-invoicing Tools Method 2026: Rules, Checks and Testing';
+const description = 'How the tools work in 2026: rules from the VAT Act, UStDV and ERechV, a pre-check against EN 16931 and XRechnung, output checked with KoSIT validator, veraPDF.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'en-GB');
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>How the tools calculate and check</h1>
+    <p>Every tool on this site runs in your browser. An invoice file you open and every entry in the invoice creator stay on your device; there is no upload, no account and no storage. The basis is statute, letters from the Federal Ministry of Finance and the published specifications of the formats. Date of our latest reading: {d(P.retrieved_at)}.</p>
+
+    <h2>The rules of the mandate</h2>
+    <p>The calculators for the mandate, deadlines, exceptions and retention read their values from a single file in which every value carries its source and reading date. It holds the dates {d(PF.empfangAb)} (receiving), {d(PF.papierBis)} (end of free choice), {d(PF.ausstellenAbKlein)} (mandatory for all) and the turnover threshold of {formatMoney(PF.umsatzgrenze, 0, lang)} for 2027 under <Fragment set:html={s('ustg27', 'section 27(38) UStG')} />. The exceptions follow <Fragment set:html={s('ustdv33', 'sections 33')} />, <Fragment set:html={s('ustdv34', '34')} /> and <Fragment set:html={s('ustdv34a', '34a UStDV')} />, the small business limits <Fragment set:html={s('ustg19', 'section 19 UStG')} /> ({formatMoney(P.kleinunternehmer.vorjahr, 0, lang)} and {formatMoney(P.kleinunternehmer.laufend, 0, lang)}), retention <Fragment set:html={s('ustg14b', 'section 14b UStG')} /> and <Fragment set:html={s('ao147', 'section 147 AO')} />, invoices to the federal government the <Fragment set:html={s('erechv', 'E-Invoicing Regulation')} />. Where the law leaves room for interpretation, we follow the <Fragment set:html={s('bmf-2025', 'Finance Ministry letter of 15 October 2025')} /> and cite the margin number.</p>
+
+    <h2>Reading an invoice file</h2>
+    <p>The viewer recognises both syntaxes of the EN 16931 standard: UBL 2.1 (invoice and credit note) and UN/CEFACT CII, as used by XRechnung, ZUGFeRD, Factur-X and Peppol BIS. From the identifier in field BT-24 it derives the standard, profile and version, and states whether the format counts as an e-invoice under the Finance Ministry letter; ZUGFeRD in the MINIMUM and BASIC WL profiles and ZUGFeRD 1.0 do not. In a PDF it looks for the embedded file (factur-x.xml, zugferd-invoice.xml or xrechnung.xml) and reads it like an XML file.</p>
+
+    <h2>The pre-check</h2>
+    <p>The pre-check recalculates every invoice and tests a selection of the business rules that are broken most often in practice:</p>
+    <ul>
+      <li>mandatory fields of the standard, rules BR-01 to BR-16 and BR-21 to BR-27 (number, date, parties, addresses, totals, lines);</li>
+      <li>calculation rules BR-CO, including the sums of lines, allowances and charges, VAT and the amount due, to the cent;</li>
+      <li>VAT category rules BR-S, BR-E, BR-AE, BR-K, BR-G and BR-O, such as the exemption reason and the VAT ID for reverse charge;</li>
+      <li>the national XRechnung rules (BR-DE) on buyer reference, contact details, address and payment instructions, plus rules PEPPOL-EN16931-R010 and R020 on electronic addresses;</li>
+      <li>the Leitweg-ID: structure and check digits using the modulo 97-10 method of the <Fragment set:html={s('leitweg-spec', 'KoSIT format specification')} />, and the IBAN check digits.</li>
+    </ul>
+    <p>What the pre-check does not do: it checks neither the XML schema nor the complete set of Schematron rules, not every detail of the code lists, and not the content against your order. The full technical verdict comes from the <Fragment set:html={s('kosit-validator', 'KoSIT validator')} />. Our messages therefore always give the rule identifier so you can match them with the official report.</p>
+
+    <h2>The invoice creator</h2>
+    <p>The creator produces three kinds of file: XRechnung {S.xrechnung} in UBL syntax, XRechnung in CII syntax and a ZUGFeRD invoice in the EN 16931 profile as a PDF/A-3b with an embedded factur-x.xml. The PDF is built in your browser with freely licensed fonts (DejaVu) and the sRGB colour profile. The program works out net, VAT per rate and gross itself under rules BR-CO-10 to BR-CO-16; the download stays blocked while the pre-check reports an error.</p>
+
+    <h2>Evidence</h2>
+    <p>We did not only check the output against our own rules but against the official tools:</p>
+    <ul>
+      <li>All eight generated XRechnung files (UBL and CII for four cases: standard VAT with two rates, small business, reverse charge, invoice to a federal authority) are rated “acceptable” by KoSIT validator 1.6.3 with the configuration for XRechnung {S.xrechnung}.</li>
+      <li>All four generated ZUGFeRD PDFs pass the check with Mustang 2.26.0, including veraPDF: PDF/A-3b compliant, embedded XML valid.</li>
+      <li>The reader processes the 66 test invoices of the <Fragment set:html={s('kosit-testsuite', 'KoSIT test suite')} /> (Apache 2.0 licence) without errors and returns the same values for UBL and CII; plus sample files from the Mustang project (Apache 2.0).</li>
+      <li>More than 100 automated tests check dates, thresholds, check digits, totals and the round trip of every file on every code change.</li>
+    </ul>
+
+    <h2>Limits</h2>
+    <p>The tools give an assessment under statute and standard, not tax advice. They do not know your contract, your bookkeeping or your arrangements with customers. Rules of the federal states for invoices to state and local authorities are covered only as far as the Leitweg-ID is concerned. A file that passes the pre-check may still receive a warning from the official validator.</p>
+
+    <h2>Updates</h2>
+    <p>We reread the sources regularly: statutes on gesetze-im-internet.de, the Federal Finance Ministry pages, the publications of <Fragment set:html={s('kosit-xrechnung', 'KoSIT on XRechnung')} /> and of <Fragment set:html={s('ferd', 'FeRD on ZUGFeRD')} />. The next major version, XRechnung {S.xrechnungNaechste}, and the end of validity of XRechnung {S.xrechnung} on {d(S.xrechnungGueltigBis)} are on our list. Every change goes online only once all tests pass again. Report errors through the <a href={route('contact', lang)}>contact page</a>; how we correct them is set out in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+  </article>
+</PageLayout>

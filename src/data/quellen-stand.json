@@ -1,0 +1,126 @@
+{
+ "_lisezmoi": "Empreintes des sources officielles, écrites par scripts/update-data.py. Ne pas éditer à la main.",
+ "geprueft_am": "2026-10-25",
+ "quellen": {
+  "ustg14": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__14.html",
+   "sha256": "176e3d1901cc26001e17ac89b4959d9bb15cbb3b241793b5d44031e01a35f56f",
+   "zeichen": 9781
+  },
+  "ustg27": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__27.html",
+   "sha256": "4f29af95fe2c12710fb31c32218b0b483c1c3ad0d7a63012e903bdb8f0f11c99",
+   "zeichen": 17985
+  },
+  "ustg19": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html",
+   "sha256": "509d68fb16e34cfcbc4405a5d385071c0f39859e6115b575d7044eb8defe7b08",
+   "zeichen": 3380
+  },
+  "ustg14b": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__14b.html",
+   "sha256": "eb2b88fcaff9178d19330b7479b3fab1c864068525f2f735592df09194dbb879",
+   "zeichen": 3569
+  },
+  "ustg26a": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__26a.html",
+   "sha256": "f9cb66a82a2d0f2240af32cff3fd1e4eb86acc0fb037abfb206821de55747fa7",
+   "zeichen": 2447
+  },
+  "ustg12": {
+   "url": "https://www.gesetze-im-internet.de/ustg_1980/__12.html",
+   "sha256": "57aaa89162b9df6f93c8a16e8941d0dc04e18c702cd38ad3d57e9c0069f3b5e8",
+   "zeichen": 7093
+  },
+  "ustdv33": {
+   "url": "https://www.gesetze-im-internet.de/ustdv_1980/__33.html",
+   "sha256": "066aacdafc0831a3620e5ca748015a843f15f510260210c1a2ffc8aeb4774e06",
+   "zeichen": 1066
+  },
+  "ustdv34": {
+   "url": "https://www.gesetze-im-internet.de/ustdv_1980/__34.html",
+   "sha256": "af007efaa197786637780624e757c076ae39f0dc36f2376e5299d854a7424f0e",
+   "zeichen": 1599
+  },
+  "ustdv34a": {
+   "url": "https://www.gesetze-im-internet.de/ustdv_1980/__34a.html",
+   "sha256": "8960b15a80ecc582f1d27edf98411a14bcd2f385480f9722ae68d3a7458e59ad",
+   "zeichen": 1378
+  },
+  "ao147": {
+   "url": "https://www.gesetze-im-internet.de/ao_1977/__147.html",
+   "sha256": "04da1f9b879c470f5652a04a2b3206c9345bd3e091c1bb3f70123b0778144709",
+   "zeichen": 5513
+  },
+  "erechv": {
+   "url": "https://www.gesetze-im-internet.de/erechv/",
+   "sha256": "3cfc25be5cb35603cd2b128ad1b97aa88af9f337d5e7b8e41463082241deb353",
+   "zeichen": 883
+  },
+  "bmf-faq": {
+   "url": "https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html",
+   "sha256": "0a5a32a7d4125a98240a99451102d785d51649205f12f22ed9ef47b4d14457fe",
+   "zeichen": 32595
+  },
+  "bmf-2025": {
+   "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2025-10-15-einfuehrung-obligatorische-e-rechnung.pdf?__blob=publicationFile&v=3",
+   "sha256": "ac3d7a12fe2430db2b483e0f0c9e6290af61a201ead4f88e9b600c827ca1f339",
+   "zeichen": 83340
+  },
+  "kosit-xrechnung": {
+   "url": "https://xeinkauf.de/xrechnung/",
+   "sha256": "7fc99567d332c28c5628d75476ea93fdbe01453f0b2224ec2aae504853272c33",
+   "zeichen": 16478
+  },
+  "kosit-validator": {
+   "url": "https://github.com/itplr-kosit/validator",
+   "sha256": "443dab8efd88311ff3b9f6d71a1561f20c3e38a87b3cbcfc446717eab56d8c17",
+   "zeichen": 6205
+  },
+  "kosit-testsuite": {
+   "url": "https://github.com/itplr-kosit/xrechnung-testsuite",
+   "sha256": "db2b97be7435a2a05832f067f40bd421948f44e8329bd8d056b1580ce83f3f69",
+   "zeichen": 3280
+  },
+  "leitweg-spec": {
+   "url": "https://xeinkauf.de/app/uploads/2022/11/Leitweg-ID-Formatspezifikation-v2-0-2-1.pdf",
+   "sha256": "d58d30f9ac5f5c1cac1a176ce4d728b86f29bafb9530a6dc97a25bd59bb5a7e4",
+   "zeichen": 17014
+  },
+  "ferd": {
+   "url": "https://www.ferd-net.de/standards/zugferd",
+   "sha256": "ac44317c70d579e8ee7207c401b14891bf6e7503cd23fa583c1a86e48af787e4",
+   "zeichen": 4558
+  },
+  "elster-viewer": {
+   "url": "https://www.e-rechnung.elster.de/",
+   "sha256": "7b954dfb908bc7b314d6b061785cfc047b3186ba5c9627d30338cba99215c30f",
+   "zeichen": 333
+  },
+  "erechnung-bund": {
+   "url": "https://www.e-rechnung-bund.de/",
+   "sha256": "86cd473b940e9d7a18bc731f6971f050db12275fcb44e2fefd8a8e51964aa110",
+   "zeichen": 11531
+  },
+  "gobd": {
+   "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2025-07-14-GoBD-2-aenderung.pdf?__blob=publicationFile&v=2",
+   "sha256": "ae886155394100f5c13343f81cc34fee822493c3948c0857f84fd5d4312cbc1d",
+   "zeichen": 7089
+  },
+  "richtlinie-2014-55": {
+   "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32014L0055",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "zeichen": 0
+  },
+  "erechnung-bund-faq": {
+   "url": "https://www.e-rechnung-bund.de/faq",
+   "sha256": "72c1268b719ffc8c44257b2337701d1a83bf4b4b3a4509591e87d78c0899ee0d",
+   "zeichen": 104000
+  },
+  "erechnung-bund-mail": {
+   "url": "https://www.e-rechnung-bund.de/ubertragungskanale/e-mail",
+   "sha256": "371be649b15274f031b5ab6146ae2a997e0b6e25be6b9b5b76b66342527aeec7",
+   "zeichen": 5266
+  }
+ }
+}

@@ -1,0 +1,11 @@
+Dateien in diesem Ordner / files in this folder
+
+DejaVuSans.ttf, DejaVuSans-Bold.ttf
+  DejaVu Fonts 2.37 (npm dejavu-fonts-ttf 2.37.3). Fonts are (c) Bitstream (Bitstream Vera licence),
+  DejaVu changes are in the public domain. Full licence: LICENSE-DejaVu.txt.
+  Used only to draw the visible page of the ZUGFeRD PDF generated in the visitor's browser.
+
+sRGB.icc
+  sRGB2014 ICC profile, Copyright International Color Consortium, 2015 (taken from the pdfkit 0.17.2
+  package, MIT). The ICC allows this profile to be copied, distributed, embedded, used and sold
+  without restriction. Embedded as the PDF/A OutputIntent of the generated ZUGFeRD PDF.

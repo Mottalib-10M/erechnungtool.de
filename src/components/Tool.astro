@@ -1,0 +1,18 @@
+---
+/** L'outil d'une page : un simulateur déclaratif de tool-specs.ts, ou un outil de fichier (lecteur, validateur, créateur, Leitweg-ID, exemples). */
+import SpecTool from './calc/SpecTool';
+import Viewer from './erech/Viewer';
+import Creator from './erech/Creator';
+import Leitweg from './erech/Leitweg';
+import Beispiel from './erech/Beispiel';
+import { route } from '../i18n/routes';
+import type { Lang } from '../lib/format';
+interface Props { kind: string; lang: Lang; arg?: Record<string, number | string>; idPrefix?: string }
+const { kind, lang, arg, idPrefix = 't' } = Astro.props;
+const links = { creator: route('erstellen', lang), validator: route('validator', lang), viewer: route('oeffnen', lang), method: route('method', lang) };
+---
+{kind === 'viewer' ? <Viewer client:load lang={lang} mode={String(arg?.mode ?? 'view')} idPrefix={idPrefix} links={links} />
+  : kind === 'creator' ? <Creator client:load lang={lang} preset={String(arg?.preset ?? 'zugferd')} idPrefix={idPrefix} links={links} />
+  : kind === 'leitweg' ? <Leitweg client:load lang={lang} idPrefix={idPrefix} />
+  : kind === 'beispiel' ? <Beispiel client:load lang={lang} idPrefix={idPrefix} links={links} />
+  : <SpecTool client:load kind={kind} lang={lang} arg={arg ? JSON.stringify(arg) : undefined} methodHref={route('method', lang)} idPrefix={idPrefix} />}

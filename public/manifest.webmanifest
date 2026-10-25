@@ -1,0 +1,21 @@
+{
+ "name": "E-Rechnung-Check",
+ "short_name": "E-Rechnung-Check",
+ "description": "E-Rechnung-Pflicht prüfen, XRechnung und ZUGFeRD lesen, prüfen und kostenlos erstellen: alles im Browser, ohne Anmeldung und ohne Upload, mit Quellen aus UStG und BMF.",
+ "start_url": "/de/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#9B1B1E",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: sources and checks`} description="Where deadlines, rules and format details come from, the order in which we rank sources, how we test the tools, when we update and what happens when something is wrong." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy and corrections</h1>
+    <p>Planning around a wrong deadline or sending a faulty invoice costs time and can put your customer’s input VAT deduction at risk. This page says where everything comes from and what happens when something is wrong.</p>
+    <h2>Responsibility</h2><p>{AUTHOR_NAME} is responsible for the content and tools. Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Ranking of sources</h2>
+    <ol>
+      <li><strong>Statutes and ordinances</strong> as currently in force on gesetze-im-internet.de: VAT Act, VAT Implementing Ordinance, Fiscal Code, federal E-Invoicing Regulation;</li>
+      <li><strong>Administrative guidance</strong>: letters from the Federal Ministry of Finance, especially on e-invoicing and the GoBD, and its FAQ;</li>
+      <li><strong>Technical specifications</strong>: the EN 16931 standard, XRechnung and the Leitweg-ID by KoSIT, ZUGFeRD by FeRD, plus the guidance of the federal invoice platforms.</li>
+    </ol>
+    <p>Trade articles, forums and software vendors’ offers are not a source for a rule. If two sources conflict, the higher one prevails, and we say so.</p>
+    <h2>Every figure dated</h2><p>Every cut-off date, threshold and format version is stored with its source and reading date in a parameter file. The pages read their figures from that file, never from the text. Anything only announced or in draft is marked “not yet published” and enters the tools only once it has been enacted.</p>
+    <h2>Testing the tools</h2><p>Generated files are checked with the official KoSIT validator and with veraPDF, the reader with the KoSIT test files. Automated tests run on every change.</p>
+    <h2>Schedule</h2><p>The sources are reread regularly. A full review at least every {REVIEW_CYCLE_MONTHS} months and after any change to the VAT Act, a new Finance Ministry letter or a new version of XRechnung or ZUGFeRD.</p>
+    <h2>Corrections</h2>
+    <ol><li>Check against the source.</li><li>Fix in the parameter file or rule set and add a test.</li><li>New date on every page.</li></ol>
+    <h2>Independence</h2><p>No money from software vendors, accounting firms or authorities. No affiliate links, no sponsored content, no product recommendations, no lead forms.</p>
+    <p>See also the <a href={route('method', lang)}>method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

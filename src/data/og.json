@@ -1,0 +1,20 @@
+{
+ "accent": "#8C1D18",
+ "symbol": "EB",
+ "variants": [
+  {
+   "file": "og-de.png",
+   "title": "Einbürgerungstest 2026\nund Einbürgerungsdatum",
+   "subtitle": "310 Fragen mit Lösung · Probeprüfung nach Bundesland · Antragsdatum nach § 10 StAG",
+   "badge": "Fragenkatalog Stand 7. Mai 2025",
+   "brand": "Passkompass"
+  },
+  {
+   "file": "og-en.png",
+   "title": "German citizenship test 2026\nand naturalisation date",
+   "subtitle": "All 310 questions with answers · mock exam by state · earliest application date",
+   "badge": "Official catalogue, May 2025",
+   "brand": "Passkompass"
+  }
+ ]
+}

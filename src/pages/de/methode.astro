@@ -1,0 +1,57 @@
+---
+/** Methode : Regeln, Vorprüfung, Ersteller, Nachweise, Grenzen. Jede Zahl aus params-2026.json. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate, formatMoney } from '../../lib/format';
+const lang = 'de';
+const path = route('method', lang);
+const P = K.P, PF = P.pflicht, S = P.standards;
+const title = 'E-Rechnung-Werkzeuge 2026: Methode, Regeln und Tests';
+const description = 'Wie die Werkzeuge 2026 rechnen und prüfen: Regeln aus UStG, UStDV und ERechV, Vorprüfung nach EN 16931 und XRechnung, Abgleich mit KoSIT-Validator und veraPDF.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'de-DE');
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Methode', description, path, lang }), breadcrumbSchema([{ name: 'Start', path: route('home', lang) }, { name: 'Methode', path }])]} breadcrumbs={[{ label: 'Methode' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Wie die Werkzeuge rechnen und prüfen</h1>
+    <p>Alle Werkzeuge dieser Seite laufen in Ihrem Browser. Eine Rechnungsdatei, die Sie öffnen, und jede Angabe im Rechnungsersteller bleiben auf Ihrem Gerät; es gibt keinen Upload, kein Konto und keine Speicherung. Grundlage sind Gesetzestexte, Schreiben des Bundesfinanzministeriums und die veröffentlichten Spezifikationen der Formate. Stand unserer letzten Lesung: {d(P.retrieved_at)}.</p>
+
+    <h2>Die Regeln der Pflicht</h2>
+    <p>Die Rechner zur Pflicht, zu Fristen, Ausnahmen und Aufbewahrung lesen ihre Werte aus einer einzigen Datei, in der jeder Wert mit Quelle und Lesedatum steht. Daraus stammen die Stichtage {d(PF.empfangAb)} (Empfang), {d(PF.papierBis)} (Ende der freien Wahl), {d(PF.ausstellenAbKlein)} (Pflicht für alle) und die Umsatzgrenze von {formatMoney(PF.umsatzgrenze, 0, lang)} für das Jahr 2027 nach <Fragment set:html={s('ustg27', '§ 27 Abs. 38 UStG')} />. Die Ausnahmen folgen <Fragment set:html={s('ustdv33', '§ 33')} />, <Fragment set:html={s('ustdv34', '§ 34')} /> und <Fragment set:html={s('ustdv34a', '§ 34a UStDV')} />, die Kleinunternehmergrenzen <Fragment set:html={s('ustg19', '§ 19 UStG')} /> ({formatMoney(P.kleinunternehmer.vorjahr, 0, lang)} und {formatMoney(P.kleinunternehmer.laufend, 0, lang)}), die Aufbewahrung <Fragment set:html={s('ustg14b', '§ 14b UStG')} /> und <Fragment set:html={s('ao147', '§ 147 AO')} />, die Rechnungen an den Bund der <Fragment set:html={s('erechv', 'E-Rechnungsverordnung')} />. Wo das Gesetz Raum für Auslegung lässt, folgen wir dem <Fragment set:html={s('bmf-2025', 'BMF-Schreiben vom 15. Oktober 2025')} /> und nennen die Randnummer.</p>
+
+    <h2>Lesen einer Rechnungsdatei</h2>
+    <p>Der Viewer erkennt die beiden Syntaxen der Norm EN 16931: UBL 2.1 (Rechnung und Gutschrift) und UN/CEFACT CII, wie sie XRechnung, ZUGFeRD, Factur-X und Peppol BIS verwenden. Aus der Kennung im Feld BT-24 leitet er Standard, Profil und Version ab und sagt, ob das Format nach dem BMF-Schreiben als E-Rechnung zählt; ZUGFeRD in den Profilen MINIMUM und BASIC WL sowie ZUGFeRD 1.0 zählen nicht. Bei einer PDF sucht er die eingebettete Datei (factur-x.xml, zugferd-invoice.xml oder xrechnung.xml) und liest sie wie eine XML-Datei.</p>
+
+    <h2>Die Vorprüfung</h2>
+    <p>Die Vorprüfung rechnet jede Rechnung nach und prüft eine Auswahl der Geschäftsregeln, die in der Praxis am häufigsten verletzt werden:</p>
+    <ul>
+      <li>Pflichtfelder der Norm, Regeln BR-01 bis BR-16 und BR-21 bis BR-27 (Nummer, Datum, Parteien, Anschriften, Summen, Positionen);</li>
+      <li>Rechenregeln BR-CO, darunter die Summen der Positionen, der Nachlässe und Zuschläge, der Steuer und des Zahlbetrags auf den Cent;</li>
+      <li>Regeln der Steuerkategorien BR-S, BR-E, BR-AE, BR-K, BR-G und BR-O, etwa Befreiungsgrund und USt-IdNr. bei Reverse Charge;</li>
+      <li>die nationalen Regeln der XRechnung (BR-DE) zu Käuferreferenz, Kontaktdaten, Anschrift und Zahlungsangaben sowie die Regeln PEPPOL-EN16931-R010 und R020 zu den elektronischen Adressen;</li>
+      <li>die Leitweg-ID: Aufbau und Prüfziffer nach dem Verfahren Modulo 97-10 der <Fragment set:html={s('leitweg-spec', 'Formatspezifikation der KoSIT')} />, dazu die Prüfziffer der IBAN.</li>
+    </ul>
+    <p>Was die Vorprüfung nicht leistet: Sie prüft weder das XML-Schema noch den vollständigen Satz der Schematron-Regeln, keine Codelisten in allen Einzelheiten und nicht den Inhalt im Verhältnis zu Ihrem Auftrag. Den vollständigen technischen Befund liefert der <Fragment set:html={s('kosit-validator', 'Validator der KoSIT')} />. Unsere Meldungen nennen deshalb immer die Kennung der Regel, damit Sie sie mit dem amtlichen Prüfbericht abgleichen können.</p>
+
+    <h2>Der Rechnungsersteller</h2>
+    <p>Der Ersteller erzeugt drei Arten von Dateien: XRechnung {S.xrechnung} in der Syntax UBL, XRechnung in der Syntax CII und eine ZUGFeRD-Rechnung im Profil EN 16931 als PDF/A-3b mit eingebetteter factur-x.xml. Die PDF entsteht in Ihrem Browser mit frei lizenzierten Schriften (DejaVu) und dem Farbprofil sRGB. Netto, Steuer je Satz und Brutto rechnet das Programm selbst nach den Regeln BR-CO-10 bis BR-CO-16; der Download bleibt gesperrt, solange die Vorprüfung einen Fehler meldet.</p>
+
+    <h2>Nachweise</h2>
+    <p>Wir haben die Ausgabe nicht nur gegen unsere eigenen Regeln geprüft, sondern gegen die amtlichen Werkzeuge:</p>
+    <ul>
+      <li>Alle acht erzeugten XRechnungen (UBL und CII für vier Fälle: Regelsteuer mit zwei Sätzen, Kleinunternehmer, Reverse Charge, Rechnung an eine Bundesbehörde) bewertet der KoSIT-Validator 1.6.3 mit der Konfiguration für XRechnung {S.xrechnung} als „acceptable“.</li>
+      <li>Alle vier erzeugten ZUGFeRD-PDFs bestehen die Prüfung mit Mustang 2.26.0, einschließlich veraPDF: konform zu PDF/A-3b, die eingebettete XML gültig.</li>
+      <li>Der Leser verarbeitet die 66 Testrechnungen der <Fragment set:html={s('kosit-testsuite', 'Testsuite der KoSIT')} /> (Lizenz Apache 2.0) ohne Fehler und liefert für UBL und CII dieselben Werte; dazu Beispieldateien des Mustang-Projekts (Apache 2.0).</li>
+      <li>Mehr als 100 automatische Tests prüfen Stichtage, Grenzen, Prüfziffern, Summen und die Hin- und Rückumwandlung jeder Datei bei jeder Änderung des Codes.</li>
+    </ul>
+
+    <h2>Grenzen</h2>
+    <p>Die Werkzeuge geben eine Einschätzung nach Gesetz und Norm, keine Steuerberatung. Sie kennen Ihren Vertrag, Ihre Buchhaltung und die Absprachen mit Ihren Kunden nicht. Regeln der Länder für Rechnungen an Landes- und Kommunalbehörden sind nur so weit abgebildet, wie sie die Leitweg-ID betreffen. Eine Datei, die die Vorprüfung besteht, kann im amtlichen Validator dennoch eine Warnung erhalten.</p>
+
+    <h2>Aktualisierung</h2>
+    <p>Wir lesen die Quellen regelmäßig neu: Gesetzestexte auf gesetze-im-internet.de, die Seiten des Bundesfinanzministeriums, die Veröffentlichungen der <Fragment set:html={s('kosit-xrechnung', 'KoSIT zur XRechnung')} /> und von <Fragment set:html={s('ferd', 'FeRD zu ZUGFeRD')} />. Die nächste große Fassung, XRechnung {S.xrechnungNaechste}, und das Ende der Gültigkeit von XRechnung {S.xrechnung} am {d(S.xrechnungGueltigBis)} sind vorgemerkt. Jede Änderung geht erst online, wenn alle Tests wieder bestehen. Fehler melden Sie über die <a href={route('contact', lang)}>Kontaktseite</a>; wie wir korrigieren, steht in den <a href={route('editorial', lang)}>Redaktionsgrundsätzen</a>.</p>
+  </article>
+</PageLayout>

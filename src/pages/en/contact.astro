@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const description = 'Write to us if a rule or deadline looks wrong, the viewer reads an invoice file incorrectly, or you would like to embed one of the tools on your own website.';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: report an error, embed a tool`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We usually reply within a week.</p>
+    <h2>A rule or deadline looks wrong</h2>
+    <p>Name the page, the statement and, if possible, the provision in the statute or the Finance Ministry letter. We check against the source and correct within a few days.</p>
+    <h2>The viewer reads a file incorrectly</h2>
+    <p>Describe which field is shown wrongly and give the format (XRechnung UBL or CII, ZUGFeRD with its profile). Please do not send us a real invoice with names, addresses or bank details. Replace them with made-up values first; the structure of the file is enough for us to find the error.</p>
+    <h2>Embedding a tool</h2>
+    <p>Chambers, associations, accounting firms and clubs can embed the mandate check, the Leitweg-ID checker and the viewer for free: <a href={route('widget', lang)}>embed</a>.</p>
+    <h2>What we do not do</h2>
+    <p>No individual tax advice, no review of your bookkeeping, no sending of invoices and no software setup. Tax advisers and accounting software vendors handle those.</p>
+  </div>
+</PageLayout>

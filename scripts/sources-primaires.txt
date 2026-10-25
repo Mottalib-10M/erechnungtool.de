@@ -1,0 +1,15 @@
+# Sources propres au sujet de ce site (E-Rechnung), en plus de scripts/sources-officielles.txt.
+# KoSIT, Koordinierungsstelle für IT-Standards (Bremen, mandatée par le IT-Planungsrat) : éditeur de la norme XRechnung et du validateur de référence.
+xeinkauf.de
+# KoSIT : dépôts officiels du validateur, de sa configuration et des fichiers de test XRechnung.
+github.com/itplr-kosit
+# FeRD, Forum elektronische Rechnung Deutschland : éditeur de la norme ZUGFeRD (identique à Factur-X).
+ferd-net.de
+# Plateformes de réception des factures de l'administration fédérale (portail officiel du Bund).
+e-rechnung-bund.de
+# Viewer E-Rechnung de l'administration fiscale (ELSTER).
+e-rechnung.elster.de
+# Textes de loi officiels (Bundesministerium der Justiz).
+gesetze-im-internet.de
+# Ministère fédéral des Finances (BMF-Schreiben, FAQ).
+bundesfinanzministerium.de

@@ -1,0 +1,266 @@
+{
+  "_lisezmoi": "Alle rechtlichen und technischen Parameter der Seite, nie fest im Code (RECETTE-SITE.md §4). Jeder Wert ist an der genannten Quelle nachgelesen; retrieved_at = Tag der Lesung.",
+  "year": 2026,
+  "retrieved_at": "2026-10-25",
+  "valid_from": "2026-01-01",
+  "valid_to": "2026-12-31",
+  "pflicht": {
+    "_quelle": "§ 14 Abs. 1 und 2 UStG, § 27 Abs. 38 UStG in der Fassung des Wachstumschancengesetzes vom 27.03.2024 (BGBl. 2024 I Nr. 108)",
+    "empfangAb": "2025-01-01",
+    "papierBis": "2026-12-31",
+    "kleinBis": "2027-12-31",
+    "ediBis": "2027-12-31",
+    "ausstellenAb": "2027-01-01",
+    "ausstellenAbKlein": "2028-01-01",
+    "umsatzgrenze": 800000,
+    "ausstellungsfristMonate": 6,
+    "retrieved_at": "2026-10-25",
+    "source": "ustg27"
+  },
+  "ausnahmen": {
+    "_quelle": "§ 33 Satz 4, § 34 Abs. 1 Satz 2 und § 34a Satz 4 UStDV; § 14 Abs. 2 Satz 2 Nr. 1 UStG (steuerfreie Leistungen nach § 4 Nr. 8 bis 29 UStG)",
+    "kleinbetrag": 250,
+    "steuerfreiVon": 8,
+    "steuerfreiBis": 29,
+    "retrieved_at": "2026-10-25",
+    "source": "ustdv33"
+  },
+  "kleinunternehmer": {
+    "_quelle": "§ 19 Abs. 1 UStG in der Fassung des Jahressteuergesetzes 2024 (ab 1.1.2025)",
+    "vorjahr": 25000,
+    "laufend": 100000,
+    "retrieved_at": "2026-10-25",
+    "source": "ustg19"
+  },
+  "aufbewahrung": {
+    "_quelle": "§ 14b Abs. 1 UStG und § 147 Abs. 3 AO in der Fassung des Vierten Bürokratieentlastungsgesetzes; § 27 Abs. 40 UStG",
+    "rechnungJahre": 8,
+    "handelsbriefJahre": 6,
+    "buecherJahre": 10,
+    "retrieved_at": "2026-10-25",
+    "source": "ustg14b"
+  },
+  "bussgeld": {
+    "_quelle": "§ 26a Abs. 2 Nr. 1 und 2, Abs. 3 UStG",
+    "rechnungHoechst": 5000,
+    "retrieved_at": "2026-10-25",
+    "source": "ustg26a"
+  },
+  "erechv": {
+    "_quelle": "§ 3 Abs. 3, §§ 4 und 5 E-Rechnungsverordnung des Bundes",
+    "direktauftrag": 1000,
+    "pflichtSeit": "2020-11-27",
+    "retrieved_at": "2026-10-25",
+    "source": "erechv",
+    "kanaele": [
+      "Weberfassung",
+      "Upload",
+      "Peppol",
+      "E-Mail"
+    ]
+  },
+  "steuer": {
+    "_quelle": "§ 12 Abs. 1 und 2 UStG",
+    "regel": 19,
+    "ermaessigt": 7,
+    "retrieved_at": "2026-10-25",
+    "source": "ustg12"
+  },
+  "standards": {
+    "_quelle": "KoSIT (xeinkauf.de), Releases XRechnung; FeRD, Informationspaket ZUGFeRD",
+    "xrechnung": "3.0.2",
+    "xrechnungGueltigBis": "2027-07-31",
+    "xrechnungNaechste": "4.0",
+    "zugferd": "2.5.2",
+    "zugferdStand": "2026-08-04",
+    "zugferdMindest": "2.0.1",
+    "xrCustomization": "urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0",
+    "en16931Id": "urn:cen.eu:en16931:2017",
+    "peppolProfile": "urn:fdc:peppol.eu:2017:poacc:billing:01:1.0",
+    "kositValidator": "1.6.3",
+    "kositKonfiguration": "2026-08-31",
+    "retrieved_at": "2026-10-25",
+    "source": "kosit-xrechnung",
+    "zugferdBund": "2.2.0"
+  },
+  "bmf": {
+    "schreiben2024": "2024-10-15",
+    "schreiben2025": "2025-10-15",
+    "gz2025": "III C 2 - S 7287-a/00019/007/243",
+    "gobd": "2019-11-28",
+    "gobdGeaendert": "2025-07-14",
+    "retrieved_at": "2026-10-25",
+    "source": "bmf-2025",
+    "gobdGz": "IV D 2 - S 0316/00128/005/088"
+  },
+  "sources": {
+    "ustg14": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__14.html",
+      "label": {
+        "de": "§ 14 UStG: Ausstellung von Rechnungen (gesetze-im-internet.de)",
+        "en": "Section 14 VAT Act (UStG): issuing invoices (gesetze-im-internet.de)"
+      }
+    },
+    "ustg27": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__27.html",
+      "label": {
+        "de": "§ 27 UStG: Übergangsvorschriften, Abs. 38 zur E-Rechnung (gesetze-im-internet.de)",
+        "en": "Section 27 VAT Act: transitional rules, subsection 38 on e-invoicing (gesetze-im-internet.de)"
+      }
+    },
+    "ustg19": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html",
+      "label": {
+        "de": "§ 19 UStG: Kleinunternehmer (gesetze-im-internet.de)",
+        "en": "Section 19 VAT Act: small businesses (gesetze-im-internet.de)"
+      }
+    },
+    "ustg14b": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__14b.html",
+      "label": {
+        "de": "§ 14b UStG: Aufbewahrung von Rechnungen (gesetze-im-internet.de)",
+        "en": "Section 14b VAT Act: keeping invoices (gesetze-im-internet.de)"
+      }
+    },
+    "ustg26a": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__26a.html",
+      "label": {
+        "de": "§ 26a UStG: Bußgeldvorschriften (gesetze-im-internet.de)",
+        "en": "Section 26a VAT Act: administrative fines (gesetze-im-internet.de)"
+      }
+    },
+    "ustg12": {
+      "url": "https://www.gesetze-im-internet.de/ustg_1980/__12.html",
+      "label": {
+        "de": "§ 12 UStG: Steuersätze (gesetze-im-internet.de)",
+        "en": "Section 12 VAT Act: tax rates (gesetze-im-internet.de)"
+      }
+    },
+    "ustdv33": {
+      "url": "https://www.gesetze-im-internet.de/ustdv_1980/__33.html",
+      "label": {
+        "de": "§ 33 UStDV: Rechnungen über Kleinbeträge (gesetze-im-internet.de)",
+        "en": "Section 33 VAT Implementing Ordinance: small-amount invoices (gesetze-im-internet.de)"
+      }
+    },
+    "ustdv34": {
+      "url": "https://www.gesetze-im-internet.de/ustdv_1980/__34.html",
+      "label": {
+        "de": "§ 34 UStDV: Fahrausweise als Rechnungen (gesetze-im-internet.de)",
+        "en": "Section 34 VAT Implementing Ordinance: tickets as invoices (gesetze-im-internet.de)"
+      }
+    },
+    "ustdv34a": {
+      "url": "https://www.gesetze-im-internet.de/ustdv_1980/__34a.html",
+      "label": {
+        "de": "§ 34a UStDV: Rechnungen von Kleinunternehmern (gesetze-im-internet.de)",
+        "en": "Section 34a VAT Implementing Ordinance: invoices from small businesses (gesetze-im-internet.de)"
+      }
+    },
+    "ao147": {
+      "url": "https://www.gesetze-im-internet.de/ao_1977/__147.html",
+      "label": {
+        "de": "§ 147 AO: Ordnungsvorschriften für die Aufbewahrung von Unterlagen (gesetze-im-internet.de)",
+        "en": "Section 147 Fiscal Code (AO): retention of records (gesetze-im-internet.de)"
+      }
+    },
+    "erechv": {
+      "url": "https://www.gesetze-im-internet.de/erechv/",
+      "label": {
+        "de": "E-Rechnungsverordnung des Bundes, ERechV (gesetze-im-internet.de)",
+        "en": "Federal E-Invoicing Ordinance, ERechV (gesetze-im-internet.de)"
+      }
+    },
+    "bmf-faq": {
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html",
+      "label": {
+        "de": "BMF: Fragen und Antworten zur Einführung der obligatorischen E-Rechnung",
+        "en": "Federal Finance Ministry: FAQ on mandatory e-invoicing (German)"
+      }
+    },
+    "bmf-2025": {
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2025-10-15-einfuehrung-obligatorische-e-rechnung.pdf?__blob=publicationFile&v=3",
+      "label": {
+        "de": "BMF-Schreiben vom 15. Oktober 2025 zur obligatorischen E-Rechnung (PDF)",
+        "en": "Federal Finance Ministry letter of 15 October 2025 on mandatory e-invoicing (PDF, German)"
+      }
+    },
+    "kosit-xrechnung": {
+      "url": "https://xeinkauf.de/xrechnung/",
+      "label": {
+        "de": "KoSIT: Standard XRechnung, Versionen und Releases (xeinkauf.de)",
+        "en": "KoSIT: the XRechnung standard, versions and releases (xeinkauf.de)"
+      }
+    },
+    "kosit-validator": {
+      "url": "https://github.com/itplr-kosit/validator",
+      "label": {
+        "de": "KoSIT-Validator, amtliches Prüfwerkzeug (Quellcode, Apache-2.0)",
+        "en": "KoSIT validator, the official checking tool (source code, Apache-2.0)"
+      }
+    },
+    "kosit-testsuite": {
+      "url": "https://github.com/itplr-kosit/xrechnung-testsuite",
+      "label": {
+        "de": "KoSIT: Testsuite mit Beispielrechnungen zur XRechnung (Apache-2.0)",
+        "en": "KoSIT: XRechnung test suite with sample invoices (Apache-2.0)"
+      }
+    },
+    "leitweg-spec": {
+      "url": "https://xeinkauf.de/app/uploads/2022/11/Leitweg-ID-Formatspezifikation-v2-0-2-1.pdf",
+      "label": {
+        "de": "KoSIT: Formatspezifikation Leitweg-ID, Version 2.0.2 (PDF)",
+        "en": "KoSIT: Leitweg-ID format specification, version 2.0.2 (PDF, German)"
+      }
+    },
+    "ferd": {
+      "url": "https://www.ferd-net.de/standards/zugferd",
+      "label": {
+        "de": "FeRD: ZUGFeRD, Versionen und Informationspaket",
+        "en": "FeRD: ZUGFeRD versions and information package"
+      }
+    },
+    "elster-viewer": {
+      "url": "https://www.e-rechnung.elster.de/",
+      "label": {
+        "de": "ELSTER: kostenloser E-Rechnungs-Viewer der Steuerverwaltung",
+        "en": "ELSTER: free e-invoice viewer of the tax administration"
+      }
+    },
+    "erechnung-bund": {
+      "url": "https://www.e-rechnung-bund.de/",
+      "label": {
+        "de": "E-Rechnung Bund: Rechnungseingangsplattformen des Bundes",
+        "en": "E-Rechnung Bund: federal invoice receipt platforms"
+      }
+    },
+    "gobd": {
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2025-07-14-GoBD-2-aenderung.pdf?__blob=publicationFile&v=2",
+      "label": {
+        "de": "BMF-Schreiben vom 14. Juli 2025: Änderung der GoBD wegen der E-Rechnung (PDF)",
+        "en": "Federal Finance Ministry letter of 14 July 2025 amending the GoBD for e-invoices (PDF, German)"
+      }
+    },
+    "richtlinie-2014-55": {
+      "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32014L0055",
+      "label": {
+        "de": "Richtlinie 2014/55/EU über die elektronische Rechnungsstellung bei öffentlichen Aufträgen (EUR-Lex)",
+        "en": "Directive 2014/55/EU on electronic invoicing in public procurement (EUR-Lex)"
+      }
+    },
+    "erechnung-bund-faq": {
+      "url": "https://www.e-rechnung-bund.de/faq",
+      "label": {
+        "de": "E-Rechnung Bund: FAQ zu Formaten, XRechnung und ZUGFeRD",
+        "en": "E-Rechnung Bund: FAQ on formats, XRechnung and ZUGFeRD (German)"
+      }
+    },
+    "erechnung-bund-mail": {
+      "url": "https://www.e-rechnung-bund.de/ubertragungskanale/e-mail",
+      "label": {
+        "de": "E-Rechnung Bund: Übertragungskanal E-Mail",
+        "en": "E-Rechnung Bund: the email channel (German)"
+      }
+    }
+  }
+}

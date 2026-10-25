@@ -1,0 +1,38 @@
+# Wöchentliche Quellenprüfung: UStG, UStDV, AO und ERechV auf gesetze-im-internet.de, BMF-Schreiben,
+# Seiten von KoSIT, FeRD und den Plattformen des Bundes. Bleibt alles gleich, wird nur das Prüfdatum fortgeschrieben und die Seite
+# neu gebaut. Ändert sich eine Quelle, bricht der Lauf ab (Code 2) und öffnet ein Issue: Fristen, Grenzen und
+# Versionen werden von Hand an der Primärquelle angepasst, nie automatisch übernommen.
+name: Quellen prüfen
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # montags 6:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pypdf
+      - id: quellen
+        run: python3 scripts/update-data.py
+      - name: Issue bei geänderter Quelle
+        if: failure() && steps.quellen.outcome == 'failure'
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          python3 scripts/update-data.py > bericht.txt || true
+          gh issue create --title "Quelle geändert ($(date -I))" --body-file bericht.txt
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build && npx vitest run
+      - name: Prüfdatum committen
+        run: |
+          git config user.name 'Radif Partners'
+          git config user.email 'amradif@gmail.com'
+          git add src/data/quellen-stand.json
+          git diff --cached --quiet || (git commit -m 'Quellen geprüft: keine Änderung' && git push)
