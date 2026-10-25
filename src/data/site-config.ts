@@ -1,5 +1,5 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://de-e-rechnung.example";
+export const SITE_URL = "https://erechnungtool.de";
 export const SITE_NAMES: Record<string, string> = {"de": "E-Rechnung-Check", "en": "E-Rechnung-Check"};
 export const LANG_TAGS: Record<string, string> = {"de": "de-DE", "en": "en-DE"};
 /** Locale des nombres et des dates : anglais britannique pour la version anglaise. */
@@ -18,7 +18,7 @@ export const AUTHOR_DESC: Record<string, string> = {"de": "Radif Partners ist ei
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"de": ["E-Rechnungspflicht nach § 14 UStG", "XRechnung", "ZUGFeRD", "EN 16931", "Leitweg-ID", "Kleinunternehmer und E-Rechnung"], "en": ["German e-invoicing mandate", "XRechnung", "ZUGFeRD and Factur-X", "EN 16931", "Leitweg-ID"]};
-export const CONTACT_EMAIL = "kontakt@de-e-rechnung.example";
+export const CONTACT_EMAIL = "kontakt@erechnungtool.de";
 export const THEME_COLOR = '#9B1B1E';
 export const LOGO_SYMBOL = 'XML';
 export const BING_VERIFY_CODE = '';
