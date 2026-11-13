@@ -62,7 +62,7 @@ ${h.mini('empfang', { p: ['postfach', 'lesen'], c: 'Alle vier Punkte prüfen' })
       { q: 'Does a small business need to buy e-invoicing software?', a: 'No. According to the Federal Ministry of Finance an email inbox is enough to receive. You can read XRechnung and ZUGFeRD for free, for instance with this site’s viewer, which opens the file in your browser and uploads nothing. What matters is storage: the XML file must be kept unchanged and retrievable, and a printout alone is not enough.' },
     ],
     body: (h) => `
-<h2>Who counts as a small business</h2>
+<h2>Who counts as a small business under the German e-invoice rules</h2>
 <p>The small-business scheme is set out in ${h.src('ustg19', 'section 19 UStG')} and was rewritten with effect from 1 January 2025. Since then there are two limits on total turnover: no more than ${h.eur(KU.vorjahr)} in the previous calendar year and no more than ${h.eur(KU.laufend)} in the current year. The second limit is no longer a forecast as it used to be; it bites immediately, and the supply that crosses it is already taxed normally. Businesses using the scheme charge no VAT and deduct no input VAT.</p>
 <p>For e-invoicing this has a practical consequence. Your customers cannot reclaim input VAT from your invoices, because there is no VAT on them. That is why the regulation exempts small businesses from issuing: the form of their invoice makes no difference to the recipient’s deduction.</p>
 <h2>Receiving: the duty applies to you too</h2>

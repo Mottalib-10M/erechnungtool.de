@@ -17,7 +17,7 @@ export default defineGuide({
     title: 'ZUGFeRD Rechnung erstellen 2026: PDF/A-3 mit XML, gratis',
     description: 'ZUGFeRD-Rechnung erstellen 2026: lesbare PDF/A-3 mit eingebetteter factur-x.xml im Profil EN 16931, kostenlos im Browser erzeugt und vor dem Laden vorgeprüft.',
     h1: 'ZUGFeRD-Rechnung erstellen: eine PDF für Menschen, eine XML für Programme',
-    intro: 'Formular ausfüllen und die fertige ZUGFeRD-PDF laden: Die Seite für Ihren Kunden und die XML für dessen Buchhaltung entstehen aus denselben Daten.',
+    intro: 'Formular ausfüllen, die ZUGFeRD-Rechnung erstellen und als fertige PDF laden: Die Seite für Ihren Kunden und die XML für dessen Buchhaltung entstehen aus denselben Daten.',
     resume: `Eine ZUGFeRD-Rechnung ist eine PDF-Datei im Archivformat PDF/A-3, in die eine XML-Datei mit den Rechnungsdaten eingebettet ist. Menschen lesen die PDF wie jede andere Rechnung, Buchhaltungsprogramme lesen die angehängte Datei factur-x.xml und übernehmen die Daten ohne Abtippen. Als E-Rechnung im Sinne des Umsatzsteuergesetzes zählt ZUGFeRD ab Version ${S.zugferdMindest} und in den Profilen ab BASIC; die aktuelle Fassung trägt die Nummer ${S.zugferd}. Der Ersteller auf dieser Seite erzeugt die XML im Profil EN 16931, das früher COMFORT hieß und die vollständige europäische Norm abbildet, und baut daraus eine PDF/A-3b mit eingebetteten Schriften, Farbprofil und den Metadaten, die ein Programm zum Erkennen der Rechnung braucht. Die PDF-Seite zeigt genau die Beträge der XML, denn beide entstehen aus denselben Eingaben. Wir haben die erzeugten Dateien mit dem quelloffenen Prüfwerkzeug Mustang samt veraPDF geprüft: Alle sind gültige PDF/A-3b mit gültiger XML. Erzeugt wird die Datei in Ihrem Browser, ohne Upload.`,
     faqs: [
       { q: 'Was steckt technisch in einer ZUGFeRD-PDF?', a: 'Eine PDF/A-3, also eine Archiv-PDF mit eingebetteten Schriften und festem Farbprofil, dazu als Anhang die Datei factur-x.xml. In den Metadaten der PDF steht, dass sie eine Factur-X-Rechnung enthält und in welchem Profil. Die Verknüpfung des Anhangs trägt die Beziehung „Alternative“: Die XML ist eine gleichwertige Darstellung derselben Rechnung, die Programme bevorzugt auslesen.' },
@@ -28,7 +28,7 @@ export default defineGuide({
     body: (h) => `
 <h2>Warum ZUGFeRD und nicht nur XML?</h2>
 <p>ZUGFeRD wurde vom ${h.src('ferd', 'Forum elektronische Rechnung Deutschland')} entwickelt, damit eine E-Rechnung auch dort funktioniert, wo noch kein Programm sie verarbeitet. Ihr Kunde öffnet die Datei wie jede PDF, prüft sie mit dem Auge und gibt sie frei. Seine Buchhaltung findet dieselbe Rechnung zusätzlich als strukturierte Daten. Das macht ZUGFeRD zum naheliegenden Format für kleine und mittlere Unternehmen, die an andere Unternehmen schreiben und nicht wissen, wie weit der Kunde technisch ist. Die französische Variante heißt Factur-X und ist technisch identisch.</p>
-<h2>Was der Ersteller in die Datei schreibt</h2>
+<h2>Was der Ersteller in die ZUGFeRD-Rechnung schreibt</h2>
 ${h.table(['Baustein', 'Inhalt', 'Zweck'], [
   ['Sichtbare Seite', 'Rechnung im Format A4 mit allen Angaben', 'Lesen, freigeben, ausdrucken'],
   ['Schriften', 'vollständig eingebettet', 'gleiche Darstellung auf jedem Gerät, Pflicht für PDF/A'],
@@ -54,7 +54,7 @@ ${h.mini('zf', { p: ['version', 'profil'], c: 'Alle Versionen und Profile vergle
     title: 'ZUGFeRD Invoice Creator 2026: PDF/A-3 With XML, Free',
     description: 'Create a ZUGFeRD invoice in 2026: a readable PDF/A-3 with embedded factur-x.xml in the EN 16931 profile, built free in your browser, pre-checked before saving.',
     h1: 'Create a ZUGFeRD invoice: a PDF for people, XML for software',
-    intro: 'Fill in the form and download the finished ZUGFeRD PDF: the page for your customer and the XML for their accounting come from the same data.',
+    intro: 'Fill in the ZUGFeRD invoice creator and download the finished PDF: the page for your customer and the XML for their accounting come from the same data.',
     resume: `A ZUGFeRD invoice is a PDF file in the archive format PDF/A-3 with an XML file holding the invoice data embedded inside. People read the PDF like any other invoice; accounting software reads the attached factur-x.xml file and takes over the data without retyping. Under the German VAT Act ZUGFeRD counts as an e-invoice from version ${S.zugferdMindest} and in the profiles from BASIC upwards; the current release is numbered ${S.zugferd}. The creator on this page produces the XML in the EN 16931 profile, formerly called COMFORT, which covers the full European standard, and builds a PDF/A-3b from it with embedded fonts, a colour profile and the metadata software needs to recognise the invoice. The PDF page shows exactly the amounts in the XML, because both come from the same input. We tested the generated files with the open-source validation tool Mustang, which includes veraPDF: every one is a valid PDF/A-3b with valid XML. The file is built in your browser, with no upload.`,
     faqs: [
       { q: 'What is inside a ZUGFeRD PDF technically?', a: 'A PDF/A-3, an archive PDF with embedded fonts and a fixed colour profile, plus the attachment factur-x.xml. The PDF metadata state that it contains a Factur-X invoice and in which profile. The link to the attachment carries the relationship “Alternative”: the XML is an equivalent representation of the same invoice, and software prefers to read it.' },
@@ -65,7 +65,7 @@ ${h.mini('zf', { p: ['version', 'profil'], c: 'Alle Versionen und Profile vergle
     body: (h) => `
 <h2>Why ZUGFeRD and not just XML?</h2>
 <p>ZUGFeRD was developed by the ${h.src('ferd', 'German e-invoicing forum FeRD')} so that an e-invoice also works where no software processes it yet. Your customer opens the file like any PDF, checks it by eye and approves it. Their accounting finds the same invoice as structured data too. That makes ZUGFeRD the natural format for small and medium businesses that invoice other businesses and do not know how far along their customer is technically. The French variant is called Factur-X and is technically identical.</p>
-<h2>What the creator writes into the file</h2>
+<h2>What the creator writes into the ZUGFeRD invoice</h2>
 ${h.table(['Component', 'Content', 'Purpose'], [
   ['Visible page', 'A4 invoice with every detail', 'Read, approve, print'],
   ['Fonts', 'fully embedded', 'same look on every device, required for PDF/A'],

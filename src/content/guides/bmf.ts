@@ -25,7 +25,7 @@ export default defineGuide({
       { q: 'Muss ich jede E-Rechnung vor der Zahlung validieren?', a: 'Eine ausdrückliche Pflicht zur technischen Validierung enthält das Schreiben nicht. Randnummer 35a sagt, dass eine Validierung die Prüfung der Rechnung auf Richtigkeit nicht ersetzt, sondern unterstützt. Wer den Vorsteuerabzug sichern will, prüft also Inhalt und Beträge wie bei jeder Rechnung. Eine Vorprüfung hilft dabei, weil sie Rechenfehler und fehlende Felder sofort zeigt.' },
     ],
     body: (h) => `
-<h2>Zwei Schreiben, eine Linie</h2>
+<h2>Zwei BMF-Schreiben zur E-Rechnung, eine Linie</h2>
 <p>Das Gesetz regelt die E-Rechnung in wenigen Sätzen von ${h.src('ustg14', '§ 14 UStG')} und der Übergangsregel in ${h.src('ustg27', '§ 27 Abs. 38 UStG')}. Was diese Sätze im Alltag bedeuten, hat das Bundesministerium der Finanzen in Schreiben an die obersten Finanzbehörden der Länder festgelegt. Das erste stammt vom ${h.day(M.schreiben2024)}, das zweite vom ${h.day(M.schreiben2025)} (Geschäftszeichen ${M.gz2025}). Das ${h.src('bmf-2025', 'Schreiben von 2025')} ist das aktuelle; es übernimmt die Auslegung in den Umsatzsteuer-Anwendungserlass, den die Finanzämter anwenden.</p>
 <p>Solche Schreiben binden die Verwaltung. Für Unternehmen sind sie trotzdem die wichtigste Orientierung, weil die Betriebsprüfung nach ihnen vorgeht. Gerichte können anders entscheiden; Urteile zur E-Rechnungspflicht gibt es bisher kaum, denn die Pflicht zum Ausstellen beginnt erst 2027.</p>
 <h2>Die Randnummern, die Sie kennen sollten</h2>
@@ -63,7 +63,7 @@ ${h.mini('istes', { p: ['datei'], c: 'Alle Formate einordnen' })}
       { q: 'Must I validate every e-invoice before paying it?', a: 'The letter contains no express duty to run a technical validation. Paragraph 35a says that validation does not replace checking the invoice for correctness but supports it. If you want to secure your input VAT deduction, check content and amounts as with any invoice. A pre-check helps, because it shows arithmetic errors and missing fields at once.' },
     ],
     body: (h) => `
-<h2>Two letters, one line</h2>
+<h2>Two BMF letters on e-invoicing, one line</h2>
 <p>The law covers e-invoicing in a few sentences of ${h.src('ustg14', 'section 14 UStG')} and the transitional rule in ${h.src('ustg27', 'section 27(38) UStG')}. What those sentences mean day to day was set out by the Federal Ministry of Finance in letters to the state tax authorities. The first is dated ${h.day(M.schreiben2024)}, the second ${h.day(M.schreiben2025)} (reference ${M.gz2025}). The ${h.src('bmf-2025', '2025 letter')} is the current one; it transfers the interpretation into the VAT application decree that tax offices apply.</p>
 <p>Such letters bind the administration. For businesses they are still the main point of reference, because tax audits follow them. Courts may decide otherwise; there is hardly any case law on the mandate yet, since the duty to issue only begins in 2027.</p>
 <h2>The paragraphs you should know</h2>

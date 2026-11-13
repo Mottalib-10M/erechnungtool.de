@@ -14,8 +14,8 @@ export default defineGuide({
     nav: 'Was ist eine E-Rechnung?', card: 'Die Definition im UStG und welche Dateien dazugehören',
     title: 'E-Rechnung einfach erklärt 2026: Definition und Beispiele',
     description: 'E-Rechnung einfach erklärt, Stand 2026: was das Umsatzsteuergesetz darunter versteht, warum PDF, Scan und Word nicht zählen und wie Sie Ihre Datei einordnen.',
-    h1: 'Was ist eine E-Rechnung, und was nicht?',
-    intro: 'Wählen Sie, was Sie bekommen oder verschickt haben: Der Check sagt, ob das eine E-Rechnung im Sinne des Gesetzes ist und was daraus folgt.',
+    h1: 'E-Rechnung einfach erklärt: was sie ist, und was nicht',
+    intro: 'Wählen Sie, was Sie bekommen oder verschickt haben: Der Check erklärt einfach, ob das eine E-Rechnung im Sinne des Gesetzes ist und was daraus folgt.',
     resume: `Eine E-Rechnung ist nach § 14 Abs. 1 UStG eine Rechnung, die in einem strukturierten elektronischen Format ausgestellt, übermittelt und empfangen wird und eine elektronische Verarbeitung ermöglicht. Das Format muss der europäischen Norm EN 16931 entsprechen oder sich, wenn die Beteiligten ein anderes vereinbaren, richtig und vollständig in ein solches Format übertragen lassen. Entscheidend ist also nicht, dass die Rechnung digital ankommt, sondern dass ihre Angaben als Daten in festen Feldern vorliegen. Alles andere nennt das Gesetz eine sonstige Rechnung: die Papierrechnung ebenso wie die PDF aus Word oder dem Buchhaltungsprogramm, das Foto, der Scan und die Excel-Tabelle. Typische E-Rechnungen sind die XRechnung, eine reine XML-Datei, und die ZUGFeRD-Rechnung ab Version ${S.zugferdMindest}, eine PDF mit eingebetteter XML, sofern sie mindestens das Profil BASIC nutzt. Seit 2025 muss jedes Unternehmen in Deutschland E-Rechnungen von anderen inländischen Unternehmen annehmen; ausstellen müssen es je nach Umsatz ab 2027 oder 2028.`,
     faqs: [
       { q: 'Ist eine eingescannte Papierrechnung eine E-Rechnung?', a: 'Nein. Ein Scan ist ein Bild der Rechnung, auch wenn eine Texterkennung den Inhalt durchsuchbar macht. Die Angaben stehen nicht in festen Datenfeldern nach der Norm, also bleibt der Scan eine sonstige Rechnung. Für Ihre Buchhaltung ändert das nichts am Wert des Belegs, wohl aber an der Frage, ob der Lieferant damit seine Pflicht zur E-Rechnung erfüllt.' },
@@ -24,7 +24,7 @@ export default defineGuide({
       { q: 'Ist jede XML-Datei mit Rechnungsdaten automatisch eine E-Rechnung?', a: 'Nein. Die XML muss einem Format nach EN 16931 folgen, erkennbar an der Kennung im Feld BT-24, und alle Pflichtangaben enthalten. Ein selbst gebauter XML-Export aus einer Tabellenkalkulation erfüllt das in der Regel nicht. Prüfen können Sie das mit der Formaterkennung und der Vorprüfung dieser Seite, für die vollständige Prüfung mit dem Validator der KoSIT.' },
     ],
     body: (h) => `
-<h2>Die Definition im Gesetz</h2>
+<h2>Die E-Rechnung einfach erklärt: die Definition im Gesetz</h2>
 <p>Seit 2025 unterscheidet ${h.src('ustg14', '§ 14 Abs. 1 UStG')} nur noch zwei Arten von Rechnungen. Die elektronische Rechnung ist strukturiert, maschinell verarbeitbar und normgerecht. Die sonstige Rechnung ist alles andere, gleich ob auf Papier oder in einem anderen elektronischen Format. Früher galt jede per E-Mail versandte PDF als elektronische Rechnung; diesen Sprachgebrauch hat das Gesetz aufgegeben. Wer heute von E-Rechnung spricht, meint im steuerlichen Sinn nur noch Dateien, deren Inhalt ein Programm ohne Texterkennung auslesen kann.</p>
 <p>Das ${h.src('bmf-2025', 'BMF-Schreiben vom 15. Oktober 2025')} erläutert die Begriffe. Danach muss das Format der Norm EN 16931 entsprechen; zulässig ist auch ein anderes Format, wenn Aussteller und Empfänger es vereinbaren und die Angaben richtig und vollständig in ein normgerechtes Format übertragbar sind. Das betrifft vor allem eingespielte EDI-Verfahren.</p>
 <h2>Welche Dateien zählen</h2>
@@ -53,8 +53,8 @@ ${h.mini('empfang', { p: ['postfach', 'lesen', 'pruefen', 'archiv'], c: 'Empfang
     nav: 'What is an e-invoice?', card: 'The legal definition and which files count',
     title: 'E-Invoice Meaning in Germany 2026: Definition and Examples',
     description: 'E-invoice meaning in Germany for 2026: how the VAT Act defines it, why PDF, scan and Word files do not count and how to classify your own file in a few seconds.',
-    h1: 'What is an e-invoice, and what is not?',
-    intro: 'Pick what you received or sent: the check says whether it is an e-invoice in the legal sense and what follows from that.',
+    h1: 'E-invoice meaning in Germany: what is one, and what is not?',
+    intro: 'Pick what you received or sent: the check says whether it is an e-invoice in the German legal sense and what follows from that.',
     resume: `Under section 14(1) of the German VAT Act (UStG), an e-invoice is an invoice that is issued, transmitted and received in a structured electronic format that allows electronic processing. The format must comply with the European standard EN 16931 or, if the parties agree on another one, allow the data to be converted correctly and completely into such a format. What matters is therefore not that the invoice arrives digitally but that its details exist as data in fixed fields. The Act calls everything else an ordinary invoice: the paper invoice as well as the PDF from Word or accounting software, the photo, the scan and the spreadsheet. Typical e-invoices are XRechnung, a pure XML file, and the ZUGFeRD invoice from version ${S.zugferdMindest}, a PDF with embedded XML, provided it uses at least the BASIC profile. Since 2025 every business in Germany must accept e-invoices from other domestic businesses; issuing becomes mandatory from 2027 or 2028 depending on turnover.`,
     faqs: [
       { q: 'Is a scanned paper invoice an e-invoice?', a: 'No. A scan is a picture of the invoice, even if text recognition makes the content searchable. The details are not held in fixed data fields under the standard, so the scan remains an ordinary invoice. For your accounting the document keeps its value, but it does affect whether the supplier has met its duty to issue an e-invoice.' },
@@ -63,7 +63,7 @@ ${h.mini('empfang', { p: ['postfach', 'lesen', 'pruefen', 'archiv'], c: 'Empfang
       { q: 'Is every XML file with invoice data automatically an e-invoice?', a: 'No. The XML must follow an EN 16931 format, recognisable by the identifier in field BT-24, and contain all mandatory details. A home-made XML export from a spreadsheet usually does not. You can check this with the format detector and the pre-check on this site, and run the full check with the KoSIT validator.' },
     ],
     body: (h) => `
-<h2>The legal definition</h2>
+<h2>The legal definition of an e-invoice in Germany</h2>
 <p>Since 2025 ${h.src('ustg14', 'section 14(1) UStG')} distinguishes only two kinds of invoice. The electronic invoice is structured, machine-processable and standard-compliant. The ordinary invoice is everything else, whether on paper or in another electronic format. In the past any PDF sent by email counted as an electronic invoice; the Act has dropped that usage. Today, in the tax sense, an e-invoice means only files whose content software can read without text recognition.</p>
 <p>The ${h.src('bmf-2025', 'Finance Ministry letter of 15 October 2025')} explains the terms. The format must comply with EN 16931; another format is also allowed if issuer and recipient agree on it and the details can be converted correctly and completely into a compliant format. This mainly concerns established EDI procedures.</p>
 <h2>Which files count</h2>

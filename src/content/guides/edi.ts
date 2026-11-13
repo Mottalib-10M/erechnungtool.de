@@ -24,7 +24,7 @@ export default defineGuide({
       { q: 'Muss ich mein EDI-Verfahren 2028 durch XRechnung ersetzen?', a: 'Nicht zwingend. Ab 2028 bleibt ein EDI-Format zulässig, wenn es die Angaben der EN 16931 vollständig abbilden kann und die Daten sich ohne Informationsverlust in ein normgerechtes Format übertragen lassen. Viele Branchenverbände arbeiten an solchen Profilen. Kann Ihr Profil das nicht, ist der Wechsel zu XRechnung oder ZUGFeRD der sichere Weg, oft als zusätzliche Ausgabe neben dem bestehenden Kanal.' },
     ],
     body: (h) => `
-<h2>Warum EDI eine eigene Regel bekommt</h2>
+<h2>Warum die EDI-Rechnung eine eigene Regel bekommt</h2>
 <p>Elektronischer Datenaustausch ist älter als die E-Rechnung. Händler und Lieferanten verbinden ihre Warenwirtschaft seit Jahrzehnten über Standards wie EDIFACT, wo Bestellung, Lieferavis und Rechnung als Nachrichten fließen. Diese Rechnungen sind strukturiert und maschinell verarbeitbar, folgen aber nicht dem Datenmodell der europäischen Norm EN 16931, die erst auf die ${h.src('richtlinie-2014-55', 'Richtlinie 2014/55/EU')} zurückgeht. Hätte der Gesetzgeber nur die Norm zugelassen, hätten bewährte Verfahren über Nacht ihre Grundlage verloren.</p>
 <p>Deshalb kennt ${h.src('ustg14', '§ 14 Abs. 1 Satz 6 UStG')} zwei Wege zur E-Rechnung: ein Format nach EN 16931 (Nummer 1) oder ein zwischen den Partnern vereinbartes anderes Format (Nummer 2), wenn es die richtige und vollständige Extraktion der nötigen Angaben in ein normgerechtes Format ermöglicht oder damit interoperabel ist. Für die Übergangszeit kommt eine dritte, großzügigere Regel hinzu.</p>
 <h2>Die Übergangsregel bis Ende 2027</h2>
@@ -57,7 +57,7 @@ ${h.mini('fristen', { p: ['jahr', 'form'], d: { form: 'edi' }, c: 'Alle Rechnung
       { q: 'Must I replace my EDI set-up with XRechnung in 2028?', a: 'Not necessarily. From 2028 an EDI format remains allowed if it can carry all EN 16931 details and the data can be transferred into a compliant format without loss. Many industry bodies are working on such profiles. If your profile cannot do that, switching to XRechnung or ZUGFeRD is the safe route, often as an additional output alongside the existing channel.' },
     ],
     body: (h) => `
-<h2>Why EDI gets a rule of its own</h2>
+<h2>Why EDI invoicing gets a rule of its own in Germany</h2>
 <p>Electronic data interchange is older than the e-invoice. Retailers and suppliers have linked their merchandise systems for decades through standards such as EDIFACT, with order, despatch advice and invoice flowing as messages. These invoices are structured and machine-processable, but they do not follow the data model of the European standard EN 16931, which only dates back to ${h.src('richtlinie-2014-55', 'Directive 2014/55/EU')}. Had the legislator admitted only the standard, established set-ups would have lost their footing overnight.</p>
 <p>That is why ${h.src('ustg14', 'section 14(1) sentence 6 UStG')} offers two routes to an e-invoice: a format under EN 16931 (number 1), or another format agreed between the partners (number 2) if it allows the correct and complete extraction of the required details into a compliant format or is interoperable with it. For the transition period a third, more generous rule is added.</p>
 <h2>The transitional rule until the end of 2027</h2>

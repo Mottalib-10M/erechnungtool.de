@@ -15,7 +15,7 @@ export default defineGuide({
     title: 'EN 16931 2026: Norm der E-Rechnung und ihre Pflichtfelder',
     description: 'EN 16931 einfach erklärt, Stand 2026: Business Terms, Gruppen und Regeln der europäischen Norm, ihr Bezug zu § 14 UStG und die Pflichtfelder für Ihren Fall.',
     h1: 'EN 16931: die Pflichtfelder der europäischen Norm',
-    intro: 'Besteuerung und Empfänger wählen: Die Liste zeigt, welche Felder der Norm Ihre Rechnung füllen muss und welche davon auch das Umsatzsteuergesetz verlangt.',
+    intro: 'Besteuerung und Empfänger wählen: Die Liste zeigt, welche Felder der Norm EN 16931 Ihre Rechnung füllen muss und welche davon auch das Umsatzsteuergesetz verlangt.',
     resume: `EN 16931 ist die europäische Norm für elektronische Rechnungen. Sie entstand im Auftrag der Richtlinie 2014/55/EU, die öffentliche Auftraggeber in der ganzen Union verpflichtet, Rechnungen nach dieser Norm anzunehmen, und wurde vom Europäischen Komitee für Normung (CEN) im Jahr 2017 veröffentlicht. Ihr Kern ist ein semantisches Datenmodell: Jede Angabe einer Rechnung hat einen Namen und eine Nummer, etwa BT-1 für die Rechnungsnummer oder BT-115 für den Zahlbetrag, und zusammengehörige Angaben bilden Gruppen wie BG-4 für den Verkäufer. Dazu kommen Geschäftsregeln mit Kennungen wie BR-01 oder BR-CO-15, die festlegen, welche Felder Pflicht sind und wie die Beträge zusammenhängen müssen. Wie das Modell als XML geschrieben wird, regeln zwei zugelassene Syntaxen, UBL und UN/CEFACT CII. Das deutsche Umsatzsteuergesetz knüpft seit 2025 die Definition der E-Rechnung an diese Norm. Nationale Ausprägungen wie die XRechnung schärfen sie nach, dürfen ihr aber nicht widersprechen. Kennung der reinen Norm im Feld BT-24 ist ${S.en16931Id}.`,
     faqs: [
       { q: 'Was bedeuten die Abkürzungen BT, BG und BR in der Norm?', a: 'BT steht für Business Term, eine einzelne Angabe wie Rechnungsdatum oder Steuersatz. BG steht für Business Group, eine Gruppe von Angaben, die zusammengehören, etwa die Anschrift des Käufers. BR steht für Business Rule, eine Regel, die Pflichtfelder und Rechenwege vorschreibt. Fehlermeldungen von Validatoren nennen meist eine BR-Kennung und das betroffene BT-Feld.' },
@@ -24,7 +24,7 @@ export default defineGuide({
       { q: 'Gilt die Norm auch für Gutschriften und Korrekturen?', a: 'Ja. Die Norm kennt verschiedene Rechnungsarten, die im Feld BT-3 mit einem Code stehen, zum Beispiel 380 für eine Rechnung, 381 für eine Gutschrift im Sinne einer Rechnungskorrektur und 384 für eine korrigierte Rechnung. Auch eine Korrektur muss alle Pflichtfelder enthalten und sollte in BT-25 auf die ursprüngliche Rechnung verweisen.' },
     ],
     body: (h) => `
-<h2>Woher die Norm kommt</h2>
+<h2>Woher die Norm EN 16931 kommt</h2>
 <p>Bis in die 2010er-Jahre hatte fast jedes Land und jede Branche eigene Formate für elektronische Rechnungen. Die ${h.src('richtlinie-2014-55', 'Richtlinie 2014/55/EU')} sollte das für öffentliche Aufträge vereinheitlichen. Sie beauftragte das CEN mit einer Norm für das semantische Datenmodell und verpflichtete die öffentlichen Auftraggeber der Mitgliedstaaten, Rechnungen nach dieser Norm anzunehmen und zu verarbeiten. Das Ergebnis ist die EN 16931, deren erster Teil 2017 erschien; daher die Jahreszahl in der Kennung.</p>
 <p>Deutschland hat die Richtlinie für den Bund mit der E-Rechnungsverordnung umgesetzt. Seit der Neufassung von ${h.src('ustg14', '§ 14 UStG')} gilt die Norm auch für Rechnungen zwischen Unternehmen: Eine E-Rechnung muss ihr entsprechen, gleich in welchem Format sie verschickt wird.</p>
 <h2>Datenmodell statt Dateiformat</h2>
@@ -51,7 +51,7 @@ ${h.mini('zf', { p: ['version', 'profil'], c: 'ZUGFeRD-Profil prüfen' })}
     title: 'EN 16931 in 2026: the E-Invoice Standard and Its Fields',
     description: 'EN 16931 explained for 2026: business terms, groups and rules of the European e-invoicing standard, its link to German VAT law and the fields for your case.',
     h1: 'EN 16931: the required fields of the European standard',
-    intro: 'Choose your VAT situation and recipient: the list shows which fields of the standard your invoice must fill in and which of them German VAT law also requires.',
+    intro: 'Choose your VAT situation and recipient: the list shows which fields of the EN 16931 standard your invoice must fill in and which of them German VAT law also requires.',
     resume: `EN 16931 is the European standard for electronic invoices. It was commissioned by Directive 2014/55/EU, which obliges public contracting authorities throughout the Union to accept invoices that follow it, and the European Committee for Standardization (CEN) published it in 2017. At its core is a semantic data model: every item on an invoice has a name and a number, such as BT-1 for the invoice number or BT-115 for the amount due, and related items form groups such as BG-4 for the seller. Business rules with identifiers like BR-01 or BR-CO-15 come on top; they define which fields are mandatory and how the amounts must add up. How the model is written as XML is set by two permitted syntaxes, UBL and UN/CEFACT CII. Since 2025 the German VAT Act has tied its definition of an e-invoice to this standard. National specifications such as XRechnung tighten it but may not contradict it. The identifier of the plain standard in field BT-24 is ${S.en16931Id}.`,
     faqs: [
       { q: 'What do BT, BG and BR mean in the standard?', a: 'BT stands for business term, a single item such as the invoice date or the VAT rate. BG stands for business group, a set of items that belong together, such as the buyer’s address. BR stands for business rule, a rule that prescribes mandatory fields and calculations. Validator error messages usually quote a BR identifier and the BT field concerned.' },
@@ -60,7 +60,7 @@ ${h.mini('zf', { p: ['version', 'profil'], c: 'ZUGFeRD-Profil prüfen' })}
       { q: 'Does the standard also cover credit notes and corrections?', a: 'Yes. The standard knows several invoice types, set in field BT-3 with a code, for example 380 for an invoice, 381 for a credit note in the sense of a correction and 384 for a corrected invoice. A correction must also contain all mandatory fields and should refer to the original invoice in BT-25.' },
     ],
     body: (h) => `
-<h2>Where the standard comes from</h2>
+<h2>Where the EN 16931 standard comes from</h2>
 <p>Until the 2010s almost every country and sector had its own electronic invoice formats. ${h.src('richtlinie-2014-55', 'Directive 2014/55/EU')} was meant to harmonise this for public contracts. It asked CEN for a standard describing the semantic data model and obliged the public contracting authorities of the member states to accept and process invoices that follow it. The result is EN 16931, whose first part appeared in 2017, hence the year in the identifier.</p>
 <p>Germany implemented the directive for the federal level with the E-Invoicing Regulation. Since the rewrite of ${h.src('ustg14', 'section 14 UStG')} the standard also applies to invoices between businesses: an e-invoice must comply with it, whatever format it is sent in.</p>
 <h2>A data model, not a file format</h2>

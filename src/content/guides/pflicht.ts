@@ -58,7 +58,7 @@ ${h.mini('fristen', { p: ['jahr', 'form', 'umsatz'], c: 'Alle Fristen prüfen' }
     title: 'E-invoicing Mandate Germany 2026: Who, When, Exceptions',
     description: 'German e-invoicing mandate in 2026: every business must receive e-invoices since 2025 and issue them from 2027 or 2028 depending on turnover. Check your case.',
     h1: 'German e-invoicing mandate: does it apply to you?',
-    intro: 'Enter who you invoice and your turnover: the check shows when you must issue e-invoices and what you must already be able to receive.',
+    intro: 'Enter who you invoice and your turnover: the check shows when the German mandate requires you to issue e-invoices and what you must already be able to receive.',
     resume: `The German e-invoicing mandate covers supplies between businesses established in Germany. Since 1 January 2025 every business in Germany must be able to accept an e-invoice; there is no transition period for receiving, and an email inbox is enough. For issuing, the transitional rules of section 27(38) of the VAT Act (UStG) apply. Until the end of 2026 you may still send paper or PDF invoices, a PDF only with the customer's consent. In 2027 this remains allowed only if your total turnover in the previous year was no more than 800,000 euros; from 1 January 2028 the e-invoice is mandatory for all domestic B2B invoices. Exceptions cover invoices up to 250 euros, travel tickets, most VAT-exempt supplies and small businesses, which may always issue an ordinary invoice. Invoices to consumers are not affected. Only a structured format under the European standard EN 16931 counts as an e-invoice, such as XRechnung or ZUGFeRD from version 2.0.1; a plain PDF does not.`,
     faqs: [
       { q: 'Does the German mandate apply to invoices for consumers?', a: 'No. It only covers supplies to other businesses established in Germany. You may keep giving consumers a paper or PDF invoice, after 2027 as well. If you sell to both businesses and private customers, you need e-invoices only for the business side and can carry on with your usual invoices for private buyers.' },
@@ -67,7 +67,7 @@ ${h.mini('fristen', { p: ['jahr', 'form', 'umsatz'], c: 'Alle Fristen prüfen' }
       { q: 'How is turnover counted for the 800,000 euro threshold?', a: 'What counts is total turnover under section 19(3) UStG in the previous calendar year, so for invoices issued in 2027 the turnover of 2026. It covers taxable supplies without certain exempt supplies and without VAT. If it was 800,000 euros or less, you may still issue paper or PDF invoices in 2027, with the customer’s consent for the PDF.' },
     ],
     body: (h) => `
-<h2>The three stages of the mandate</h2>
+<h2>The three stages of the e-invoicing mandate in Germany</h2>
 <p>The Growth Opportunities Act rewrote ${h.src('ustg14', 'section 14 UStG')}. Whether an invoice must be electronic now depends on two questions: is the supply made to another business, and are both established in Germany? If so, the e-invoice is the rule. When you actually have to issue one is set by the transitional provision in ${h.src('ustg27', 'section 27(38) UStG')}.</p>
 ${h.table(['Period', 'Receiving', 'Issuing'], [
   [`from ${h.day(PF.empfangAb)}`, 'Required for every business', 'Paper or PDF still allowed, PDF with consent'],

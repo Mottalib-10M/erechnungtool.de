@@ -41,7 +41,7 @@ ${h.mini('archiv', { p: ['jahr', 'beleg'], c: 'Frist für Ihre Unterlagen berech
 <h2>Unveränderbar und lesbar ablegen</h2>
 <p>Die GoBD verlangen, dass eine Unterlage nicht unbemerkt verändert werden kann. Das erreichen Sie auf mehreren Wegen: mit einem Dokumentenmanagement- oder Buchhaltungsprogramm, das Änderungen protokolliert, mit einem Speicher, der Dateien gegen Überschreiben sperrt, oder mit einem festgehaltenen Verfahren, bei dem Dateien nur einmal abgelegt und danach nur gelesen werden. Ein Ordner auf dem Rechner ohne Regeln und ohne Sicherung reicht in der Regel nicht.</p>
 <p>Ebenso wichtig ist die Lesbarkeit über ${h.n(AB.rechnungJahre)} Jahre. Speichern Sie die XML so, dass sie auch nach einem Wechsel der Software geöffnet werden kann, und halten Sie fest, mit welchem Programm Sie die Dateien anzeigen. Ein Viewer, der im Browser läuft, wie der dieser Seite, ist dafür eine robuste Rückfalllösung. Beschreiben Sie das Ganze in einer kurzen Verfahrensdokumentation: wo Rechnungen eingehen, wer sie ablegt, wie gesichert wird.</p>
-<h2>Eingang und Ausgang gleich behandeln</h2>
+<h2>E-Rechnungen archivieren: Eingang und Ausgang gleich behandeln</h2>
 <p>Die Pflicht gilt für beide Richtungen. Von Ihren eigenen Rechnungen bewahren Sie die Datei auf, die Sie verschickt haben, nicht nur die Daten in Ihrem Programm. Wie der Eingang gut organisiert wird, steht unter ${h.a('empfangen', 'E-Rechnungen empfangen')}; was eine ZUGFeRD-Datei technisch enthält, unter ${h.a('zugferd', 'ZUGFeRD')}.</p>
 `,
   },
@@ -50,8 +50,8 @@ ${h.mini('archiv', { p: ['jahr', 'beleg'], c: 'Frist für Ihre Unterlagen berech
     nav: 'Archiving e-invoices', card: 'What to keep and for how long: XML, PDF, records',
     title: 'Archive E-invoices Germany 2026: Retention, XML, GoBD',
     description: 'Archiving e-invoices in Germany 2026: eight years from the end of the issue year, the XML kept as the unchanged original. GoBD rules on ZUGFeRD, a calculator.',
-    h1: 'Keeping e-invoices: what, how long, in which form',
-    intro: 'Choose the year and type of record: the calculator gives the end of the retention period and tells you which file you must keep.',
+    h1: 'Archiving e-invoices in Germany: what, how long, in which form',
+    intro: 'Choose the year and type of record: the calculator gives the end of the retention period and tells you which e-invoice file you must archive.',
     resume: `Under section 14b of the VAT Act (UStG) and section 147(3) of the Fiscal Code (AO) you must keep invoices for ${AB.rechnungJahre} years; this applies to invoices you issue and receive and, since the Fourth Bureaucracy Relief Act, to other accounting vouchers as well. The period starts at the end of the calendar year in which the invoice was issued. An invoice from May 2025 may therefore be destroyed only after 31 December ${bsp.bis.slice(0, 4)}, unless the expiry is suspended, for example because a tax audit is running or the assessment period for a tax is still open. With an e-invoice the structured file is the original: you must keep the XML of an XRechnung, or the XML embedded in a ZUGFeRD PDF, in the format received. Under the GoBD as amended in July 2025, you need the visual part of a ZUGFeRD invoice in addition only if it contains tax-relevant details not found in the XML. Storage must rule out changes or make them traceable, and the file must stay readable and machine-processable for the whole period. A printout is not enough.`,
     faqs: [
       { q: 'Is it enough to print an e-invoice and file the paper?', a: 'No. With an e-invoice the electronic file is the original, and you must keep it in the format received. A printout or a PDF made from it is only a reading aid. If you delete the XML after printing, the tax office lacks the actual record in an audit, and your input VAT deduction may be questioned.' },
@@ -76,7 +76,7 @@ ${h.mini('archiv', { p: ['jahr', 'beleg'], c: 'Work out the period for your reco
 <h2>Store it unchanged and readable</h2>
 <p>The GoBD require that a record cannot be changed unnoticed. You can achieve that in several ways: with document management or accounting software that logs changes, with storage that locks files against overwriting, or with a written procedure under which files are filed once and only read afterwards. A folder on your computer with no rules and no backup is usually not enough.</p>
 <p>Readability over ${h.n(AB.rechnungJahre)} years matters just as much. Store the XML so that it can be opened after a change of software too, and note which program you use to display the files. A viewer that runs in the browser, like the one on this site, is a robust fallback. Describe the whole setup in short procedure documentation: where invoices arrive, who files them, how backups are made.</p>
-<h2>Treat incoming and outgoing invoices alike</h2>
+<h2>Archive incoming and outgoing e-invoices alike</h2>
 <p>The duty applies in both directions. For your own invoices, keep the file you actually sent, not just the data in your program. How to organise incoming invoices well is on ${h.a('empfangen', 'receiving e-invoices')}; what a ZUGFeRD file contains technically is on ${h.a('zugferd', 'ZUGFeRD')}.</p>
 `,
   },

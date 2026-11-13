@@ -25,7 +25,7 @@ export default defineGuide({
       { q: 'Wie berichtige ich eine fehlerhafte E-Rechnung?', a: 'Sie stellen ein neues Dokument aus, das sich eindeutig auf die ursprüngliche Rechnung bezieht, und schicken es ebenfalls als E-Rechnung. Die Nummer der alten Rechnung gehört in das Feld für die vorausgegangene Rechnung. Eine bloße Korrektur der XML-Datei mit derselben Nummer reicht nicht, denn das Original muss beim Empfänger unverändert aufbewahrt bleiben.' },
     ],
     body: (h) => `
-<h2>Bußgeld: was das Gesetz tatsächlich sagt</h2>
+<h2>Bußgeld als Strafe bei der E-Rechnung: was das Gesetz tatsächlich sagt</h2>
 <p>Viele Darstellungen sprechen von einer „Strafe“ für fehlende E-Rechnungen. Im Gesetz steht etwas Engeres. ${h.src('ustg26a', '§ 26a Abs. 2 UStG')} nennt als Ordnungswidrigkeit unter anderem, eine Rechnung entgegen § 14 Abs. 2 nicht oder nicht rechtzeitig auszustellen und eine Rechnung entgegen ${h.src('ustg14b', '§ 14b UStG')} nicht oder nicht lange genug aufzubewahren. Nach Absatz 3 kann das mit einer Geldbuße bis zu ${h.eur(B.rechnungHoechst)} geahndet werden. Ein Tatbestand „Rechnung im falschen Format“ ist nicht darunter.</p>
 <p>Wer also überhaupt keine Rechnung schreibt oder seine Eingangsrechnungen nicht aufbewahrt, riskiert dieses Bußgeld. Ob eine PDF, die eigentlich eine E-Rechnung hätte sein müssen, als „nicht ausgestellte“ Rechnung zählt, hat bisher weder Gesetz noch Verwaltung ausdrücklich gesagt. Seriös lässt sich nur sagen: Es ist ein vermeidbares Risiko.</p>
 <h2>Vorsteuer: das Risiko liegt beim Kunden</h2>
@@ -51,8 +51,8 @@ ${h.mini('fehler', { p: ['art'], c: 'Fehlerart ausführlich einordnen' })}
     nav: 'Consequences and fines', card: 'What happens when the e-invoice is missing or faulty',
     title: 'E-Invoice Penalties Germany 2026: Fines, Input VAT, Fixes',
     description: 'German e-invoicing penalties in 2026: fines under section 26a UStG, the risk to input VAT, format errors versus rule errors, and how to correct an invoice.',
-    h1: 'Consequences of a missing or faulty e-invoice',
-    intro: 'Choose whether an e-invoice was required, what you issued and whether the content is right: the calculator rates the risk to your customer’s input VAT and says whether to correct.',
+    h1: 'E-invoice penalties in Germany: missing or faulty invoices',
+    intro: 'Choose whether an e-invoice was required, what you issued and whether the content is right: the calculator rates the real penalty in Germany, the risk to your customer’s input VAT, and says whether to correct.',
     resume: `The German VAT Act contains no penalty specifically for a missing e-invoice. The fine in section 26a UStG covers failing to issue an invoice at all or on time, or failing to keep one; the fine can then reach ${formatMoney(B.rechnungHoechst, 0, 'en')}. The real consequence of a wrong form usually falls on the customer: anyone who receives a PDF or paper invoice instead of the required e-invoice lacks, in principle, a proper invoice for deducting input VAT. The Finance Ministry letter of 15 October 2025 softens this where the content is correct, but the customer will still ask for a proper e-invoice. For faulty e-invoices the ministry distinguishes three cases. Format errors turn the file into an ordinary invoice. Business-rule breaches that concern a mandatory detail under section 14(4) UStG make the invoice defective. Breaches unrelated to the mandatory details, such as a missing buyer reference, do not matter for VAT. Corrections are made with a new e-invoice that refers to the old one.`,
     faqs: [
       { q: 'Is there a specific fine for not sending an e-invoice?', a: `No, the VAT Act has no separate offence for that. Section 26a UStG penalises failing to issue an invoice at all or on time, or failing to keep it, with up to ${formatMoney(B.rechnungHoechst, 0, 'en')}. A PDF instead of a required e-invoice is not a proper invoice, but whether the tax office would treat it like a missing one is unsettled. The bigger risk lies with the customer’s input VAT.` },
@@ -61,7 +61,7 @@ ${h.mini('fehler', { p: ['art'], c: 'Fehlerart ausführlich einordnen' })}
       { q: 'How do I correct a faulty e-invoice?', a: 'You issue a new document that refers clearly to the original invoice, and you send it as an e-invoice too. The old invoice number belongs in the preceding invoice field. Simply editing the XML file and keeping the same number is not enough, because the recipient must keep the original unchanged.' },
     ],
     body: (h) => `
-<h2>Fines: what the law actually says</h2>
+<h2>E-invoice penalties in Germany: what the law actually says about fines</h2>
 <p>Many write-ups speak of a “penalty” for missing e-invoices. The law says something narrower. ${h.src('ustg26a', 'Section 26a(2) UStG')} lists as administrative offences, among others, failing to issue an invoice under section 14(2) at all or on time, and failing to keep an invoice for as long as ${h.src('ustg14b', 'section 14b UStG')} requires. Under subsection 3 this can be fined up to ${h.eur(B.rechnungHoechst)}. An offence of “invoice in the wrong format” is not among them.</p>
 <p>So anyone who writes no invoice at all or does not keep incoming invoices risks this fine. Whether a PDF that should have been an e-invoice counts as an invoice “not issued” has not been stated expressly, either by the law or by the administration. All that can be said responsibly is: it is an avoidable risk.</p>
 <h2>Input VAT: the risk lies with the customer</h2>

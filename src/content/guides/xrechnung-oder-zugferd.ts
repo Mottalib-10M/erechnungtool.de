@@ -15,7 +15,7 @@ export default defineGuide({
     title: 'XRechnung oder ZUGFeRD 2026: welches Format passt zu Ihnen',
     description: 'XRechnung oder ZUGFeRD 2026: Vergleich der beiden E-Rechnungsformate, was Behörden verlangen und was Firmenkunden lesen können. Mit Empfehlung für Ihren Fall.',
     h1: 'XRechnung oder ZUGFeRD: das richtige Format wählen',
-    intro: 'Sagen Sie, wer die Rechnung bekommt und ob ein Mensch sie ohne Software liest: Das Werkzeug empfiehlt das Format und nennt, was dabei zu beachten ist.',
+    intro: 'Sagen Sie, wer die Rechnung bekommt und ob ein Mensch sie ohne Software liest: Das Werkzeug empfiehlt XRechnung oder ZUGFeRD und nennt, was dabei zu beachten ist.',
     resume: `XRechnung und ZUGFeRD sind beide E-Rechnungen im Sinne des Umsatzsteuergesetzes, solange ZUGFeRD mindestens in Version ${S.zugferdMindest} und im Profil BASIC oder höher vorliegt. Beide beruhen auf der europäischen Norm EN 16931 und enthalten dieselben Pflichtangaben. Der Unterschied liegt in der Verpackung: Die XRechnung ist eine reine XML-Datei mit den zusätzlichen deutschen Regeln der KoSIT, ZUGFeRD eine PDF/A-3, in der die XML als Anhang steckt. Für Rechnungen an Unternehmen dürfen Sie frei wählen; ZUGFeRD hat den Vorteil, dass auch ein Kunde ohne passende Software die Rechnung lesen kann. Für Rechnungen an Behörden des Bundes verlangt die E-Rechnungsverordnung eine XRechnung oder ein anderes Format nach EN 16931; die Plattformen des Bundes nehmen ZUGFeRD nur im Profil XRECHNUNG und nur als reine XML an. Länder und Kommunen verlangen ebenfalls fast immer XRechnung mit Leitweg-ID. Wer an beide Gruppen liefert, braucht ein Programm, das beide Formate schreibt, oder den Rechnungsersteller dieser Seite.`,
     faqs: [
       { q: 'Darf ich Firmenkunden statt ZUGFeRD eine XRechnung schicken?', a: 'Ja. Zwischen Unternehmen sind beide Formate gleichwertig, und der Empfänger muss jede E-Rechnung annehmen, die der Norm entspricht. Praktisch sollten Sie aber fragen, ob Ihr Kunde die XML lesen kann. Ein kleiner Betrieb ohne Buchhaltungssoftware sieht bei einer XRechnung nur Programmcode und muss erst einen Viewer finden; bei ZUGFeRD öffnet er einfach die PDF.' },
@@ -24,7 +24,7 @@ export default defineGuide({
       { q: 'Was ist mit Kunden im EU-Ausland?', a: 'Die deutsche Pflicht gilt nur für Umsätze zwischen Unternehmen, die beide im Inland ansässig sind. Für Kunden in anderen EU-Staaten ist das Format frei wählbar, solange beide zustimmen. Verbreitet ist dort Peppol BIS Billing in UBL, ebenfalls nach EN 16931. Manche Länder haben eigene Pflichten, die Ihr Kunde kennen sollte.' },
     ],
     body: (h) => `
-<h2>Die Formate nebeneinander</h2>
+<h2>XRechnung oder ZUGFeRD: die Formate nebeneinander</h2>
 ${h.table(['Merkmal', 'XRechnung', 'ZUGFeRD'], [
   ['Herausgeber', 'KoSIT, im Auftrag von Bund und Ländern', 'FeRD, gemeinsam mit Frankreich als Factur-X'],
   ['Dateiform', 'Reine XML', 'PDF/A-3 mit eingebetteter XML'],
@@ -57,7 +57,7 @@ ${h.mini('versand', { p: ['empf', 'datei'], c: 'Versand genauer prüfen' })}
     title: 'XRechnung vs ZUGFeRD 2026: Which E-Invoice Format to Use',
     description: 'XRechnung vs ZUGFeRD 2026: comparison of the two German e-invoice formats, what public bodies want and what business customers can read. With a recommendation.',
     h1: 'XRechnung or ZUGFeRD: choosing the right format',
-    intro: 'Say who receives the invoice and whether a person reads it without software: the tool recommends a format and lists what to watch out for.',
+    intro: 'Say who receives the invoice and whether a person reads it without software: the tool recommends XRechnung or ZUGFeRD and lists what to watch out for.',
     resume: `XRechnung and ZUGFeRD are both e-invoices under the German VAT Act, provided ZUGFeRD is at least version ${S.zugferdMindest} and uses the BASIC profile or higher. Both are based on the European standard EN 16931 and carry the same mandatory details. The difference is the packaging: XRechnung is a pure XML file with the additional German rules of KoSIT, while ZUGFeRD is a PDF/A-3 that contains the XML as an attachment. For invoices to businesses you may choose freely; ZUGFeRD has the advantage that a customer without suitable software can still read the invoice. For invoices to federal authorities, the E-Invoicing Regulation requires XRechnung or another EN 16931 format; the federal platforms accept ZUGFeRD only in the XRECHNUNG profile and only as plain XML. States and municipalities also almost always require XRechnung with a Leitweg-ID. If you supply both groups, you need software that writes both formats, or the invoice creator on this site.`,
     faqs: [
       { q: 'May I send business customers an XRechnung instead of ZUGFeRD?', a: 'Yes. Between businesses both formats are equivalent, and the recipient must accept any e-invoice that meets the standard. In practice, though, ask whether your customer can read the XML. A small firm without accounting software sees only code in an XRechnung and first has to find a viewer; with ZUGFeRD it simply opens the PDF.' },
@@ -66,7 +66,7 @@ ${h.mini('versand', { p: ['empf', 'datei'], c: 'Versand genauer prüfen' })}
       { q: 'What about customers elsewhere in the EU?', a: 'The German mandate only covers supplies between businesses that are both established in Germany. For customers in other EU states the format is free as long as both agree. Peppol BIS Billing in UBL is common there, also based on EN 16931. Some countries have their own mandates, which your customer should know about.' },
     ],
     body: (h) => `
-<h2>The formats side by side</h2>
+<h2>XRechnung vs ZUGFeRD: the formats side by side</h2>
 ${h.table(['Feature', 'XRechnung', 'ZUGFeRD'], [
   ['Publisher', 'KoSIT, for the federal and state governments', 'FeRD, jointly with France as Factur-X'],
   ['File form', 'Pure XML', 'PDF/A-3 with embedded XML'],
